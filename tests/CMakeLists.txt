@@ -21,18 +21,29 @@ macro(ADD_CATCH_TESTS executable)
   endforeach()
 endmacro()
 
+
+find_package(Lua 5.3 REQUIRED)
+
 find_package(Raylib)
 find_package(Sol2)
-find_package(Lua)
 list(APPEND SOURCES catch.hpp raylib_test.cpp)
 list(APPEND LIBS raylib)
+list(APPEND LIBS ${LUA_LIBRARY})
 
 add_executable(raylib_test ${SOURCES})
+
+# C++17
+set_target_properties(raylib_test PROPERTIES
+  CXX_STANDARD 17
+  CXX_EXTENSIONS OFF
+)
+
+target_compile_definitions(raylib_test PUBLIC -DLUA)
 
 target_include_directories(raylib_test PUBLIC
     ${raylib_SOURCE_DIR}/src
     ${sol2_SOURCE_DIR}/include
-    ${lua_SOURCE_DIR}
+    ${LUA_INCLUDE_DIR}
 )
 
 target_link_libraries(raylib_test ${LIBS})
