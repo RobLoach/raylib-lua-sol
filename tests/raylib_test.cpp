@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-#include "raylib-lua-sol2.hpp"
+#include "../include/raylib-lua-sol2.hpp"
 #include "catch.hpp"
 
 TEST_CASE("raylib_test functions work", "[raylib_test]" ) {
@@ -20,6 +20,12 @@ TEST_CASE("raylib_test functions work", "[raylib_test]" ) {
 	sol::state lua;
 	raylib_lua_sol2(lua);
 
-	lua.script("beep()");
- 	
+	lua.script("local windowReady = IsWindowReady()");
+	bool ready = lua["windowReady"];
+	CHECK(ready == false);
+	lua.script("InitWindow(640, 480, \"Hello\")");
+	lua.script("windowReady = IsWindowReady()");
+	ready = lua["windowReady"];
+	CHECK(ready == true);
+	lua.script("CloseWindow()");
 }
