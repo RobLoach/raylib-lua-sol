@@ -6,7 +6,6 @@ add_executable(raylib-lua-sol2 raylib-lua-sol2.cpp)
 
 target_compile_definitions(raylib-lua-sol2 PUBLIC -DLUA)
 
-
 set_target_properties(raylib-lua-sol2 PROPERTIES
   CXX_STANDARD 17
   CXX_EXTENSIONS OFF
