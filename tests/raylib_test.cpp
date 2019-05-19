@@ -24,6 +24,8 @@ TEST_CASE("raylib_test functions work", "[raylib_test]" ) {
   REQUIRE_FALSE(r2.valid());
   d = lua["ConfigFlag"]["FLAG_FULLSCREEN_MODE"];
   REQUIRE(d == ConfigFlag::FLAG_FULLSCREEN_MODE);
+  BlendMode blendmodeMultiplied = lua["BlendMode"]["BLEND_MULTIPLIED"];
+  REQUIRE(blendmodeMultiplied == BlendMode::BLEND_MULTIPLIED);
 
   // Rectangle
   auto r3 = lua.safe_script("theRect = Rectangle(10.0, 20.0, 30.0, 40.0)", sol::script_pass_on_error);
