@@ -190,6 +190,22 @@ void raylib_lua_sol2_structs(sol::state &lua) {
     "target", &Camera2D::target,
     "rotation", &Camera2D::rotation,
     "zoom", &Camera2D::zoom);
+  lua.new_usertype<Mesh>("Mesh",
+    "vertexCount", &Mesh::vertexCount,
+    "triangleCount", &Mesh::triangleCount,
+    "vertices", &Mesh::vertices,
+    "texcoords", &Mesh::texcoords,
+    "texcoords2", &Mesh::texcoords2,
+    "normals", &Mesh::normals,
+    "tangents", &Mesh::tangents,
+    "colors", &Mesh::colors,
+    "indices", &Mesh::indices,
+    "animVertices", &Mesh::animVertices,
+    "animNormals", &Mesh::animNormals,
+    "boneIds", &Mesh::boneIds,
+    "boneWeights", &Mesh::boneWeights,
+    "vaoId", &Mesh::vaoId,
+    "vboId", &Mesh::vboId);
   // TODO: Add remaining Structs
 }
 

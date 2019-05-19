@@ -36,7 +36,7 @@ local gravity = 3.0
 
 local smoke = LoadTexture("resources/smoke.png")
 
-local blending = BlendMode.ALPHA
+local blending = BlendMode.BLEND_ALPHA
 
 SetTargetFPS(60)
 -------------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ SetTargetFPS(60)
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    
+
     -- Activate one particle every frame and Update active particles
     -- NOTE: Particles initial position should be mouse position when activated
     -- NOTE: Particles fall down with gravity and rotation... and disappear after 2 seconds (alpha = 0)
@@ -63,16 +63,16 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
         if (mouseTail[i].active) then
             mouseTail[i].position.y = mouseTail[i].position.y + gravity
             mouseTail[i].alpha = mouseTail[i].alpha - 0.01
-            
+
             if (mouseTail[i].alpha <= 0.0) then mouseTail[i].active = false end
-            
+
             mouseTail[i].rotation = mouseTail[i].rotation + 5.0
         end
     end
-    
-    if (IsKeyPressed(KEY.SPACE)) then
-        if (blending == BlendMode.ALPHA) then blending = BlendMode.ADDITIVE
-        else blending = BlendMode.ALPHA end
+
+    if (IsKeyPressed(KeyboardKey.KEY_SPACE)) then
+        if (blending == BlendMode.BLEND_ALPHA) then blending = BlendMode.BLEND_ADDITIVE
+        else blending = BlendMode.BLEND_ALPHA end
     end
     ---------------------------------------------------------------------------------------
 
@@ -81,26 +81,26 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     BeginDrawing()
 
         ClearBackground(DARKGRAY)
-        
+
         BeginBlendMode(blending)
 
             -- Draw active particles
             for i = 1, MAX_PARTICLES do
-                if (mouseTail[i].active) then 
-                    DrawTexturePro(smoke, Rectangle(0, 0, smoke.width, smoke.height), 
-                        Rectangle(mouseTail[i].position.x, mouseTail[i].position.y, 
+                if (mouseTail[i].active) then
+                    DrawTexturePro(smoke, Rectangle(0, 0, smoke.width, smoke.height),
+                        Rectangle(mouseTail[i].position.x, mouseTail[i].position.y,
                                   smoke.width*mouseTail[i].size//1, smoke.height*mouseTail[i].size//1),
-                        Vector2(smoke.width*mouseTail[i].size/2, smoke.height*mouseTail[i].size/2), 
+                        Vector2(smoke.width*mouseTail[i].size/2, smoke.height*mouseTail[i].size/2),
                         mouseTail[i].rotation, Fade(mouseTail[i].color, mouseTail[i].alpha)) end
             end
-        
+
         EndBlendMode()
-        
+
         DrawText("PRESS SPACE to CHANGE BLENDING MODE", 180, 20, 20, BLACK)
-        
-        if (blending == BlendMode.ALPHA) then DrawText("ALPHA BLENDING", 290, screenHeight - 40, 20, BLACK)
+
+        if (blending == BlendMode.BLEND_ALPHA) then DrawText("ALPHA BLENDING", 290, screenHeight - 40, 20, BLACK)
         else DrawText("ADDITIVE BLENDING", 280, screenHeight - 40, 20, RAYWHITE) end
-        
+
     EndDrawing()
     ---------------------------------------------------------------------------------------
 end
