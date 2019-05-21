@@ -206,7 +206,83 @@ void raylib_lua_sol2_structs(sol::state &lua) {
     "boneWeights", &Mesh::boneWeights,
     "vaoId", &Mesh::vaoId,
     "vboId", &Mesh::vboId);
-  // TODO: Add remaining Structs
+  lua.new_usertype<Shader>("Shader",
+    "id", &Shader::id,
+    "locs", &Shader::locs);
+  lua.new_usertype<MaterialMap>("MaterialMap",
+    "texture", &MaterialMap::texture,
+    "color", &MaterialMap::color,
+    "value", &MaterialMap::value);
+  lua.new_usertype<Material>("Material",
+    "shader", &Material::shader,
+    "maps", &Material::maps,
+    "params", &Material::params);
+  lua.new_usertype<Transform>("Transform",
+    "translation", &Transform::translation,
+    "rotation", &Transform::rotation,
+    "scale", &Transform::scale);
+  lua.new_usertype<BoneInfo>("BoneInfo",
+    "name", &BoneInfo::name,
+    "parent", &BoneInfo::parent);
+  lua.new_usertype<Model>("Model",
+    "transform", &Model::transform,
+    "meshCount", &Model::meshCount,
+    "meshes", &Model::meshes,
+    "materialCount", &Model::materialCount,
+    "materials", &Model::materials,
+    "meshMaterial", &Model::meshMaterial,
+    "boneCount", &Model::boneCount,
+    "bones", &Model::bones,
+    "bindPose", &Model::bindPose);
+  /*
+  // TODO: Add Model Animation wrapper.
+  lua.new_usertype<ModelAnimation>("ModelAnimation",
+    "boneCount", &ModelAnimation::boneCount,
+    "bones", &ModelAnimation::bones,
+    "frameCount", &ModelAnimation::frameCount,
+    "framePoses", &ModelAnimation::framePoses);
+  */
+  lua.new_usertype<Ray>("Ray",
+    "position", &Ray::position,
+    "direction", &Ray::direction);
+  lua.new_usertype<RayHitInfo>("RayHitInfo",
+    "hit", &RayHitInfo::hit,
+    "distance", &RayHitInfo::distance,
+    "position", &RayHitInfo::position,
+    "normal", &RayHitInfo::normal);
+  lua.new_usertype<BoundingBox>("BoundingBox",
+    "min", &BoundingBox::min,
+    "max", &BoundingBox::max);
+  lua.new_usertype<Wave>("Wave",
+    "sampleCount", &Wave::sampleCount,
+    "sampleRate", &Wave::sampleRate,
+    "sampleSize", &Wave::sampleSize,
+    "channels", &Wave::channels,
+    "data", &Wave::data);
+  lua.new_usertype<Sound>("Sound",
+    "audioBuffer", &Sound::audioBuffer,
+    "source", &Sound::source,
+    "buffer", &Sound::buffer,
+    "format", &Sound::format);
+  lua.new_usertype<AudioStream>("AudioStream",
+    "sampleRate", &AudioStream::sampleRate,
+    "sampleSize", &AudioStream::sampleSize,
+    "channels", &AudioStream::channels,
+    "audioBuffer", &AudioStream::audioBuffer,
+    "format", &AudioStream::format,
+    "source", &AudioStream::source,
+    "buffers", &AudioStream::buffers);
+  lua.new_usertype<VrDeviceInfo>("VrDeviceInfo",
+    "hResolution", &VrDeviceInfo::hResolution,
+    "vResolution", &VrDeviceInfo::vResolution,
+    "hScreenSize", &VrDeviceInfo::hScreenSize,
+    "vScreenSize", &VrDeviceInfo::vScreenSize,
+    "vScreenCenter", &VrDeviceInfo::vScreenCenter,
+    "eyeToScreenDistance", &VrDeviceInfo::eyeToScreenDistance,
+    "lensSeparationDistance", &VrDeviceInfo::lensSeparationDistance,
+    "interpupillaryDistance", &VrDeviceInfo::interpupillaryDistance,
+    "lensDistortionValues", &VrDeviceInfo::lensDistortionValues,
+    "chromaAbCorrection", &VrDeviceInfo::chromaAbCorrection);
 }
 
 #define RAYLIB_LUA_SOL2_ENUM_DEF(x) \
