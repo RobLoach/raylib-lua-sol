@@ -13,9 +13,19 @@ A raylib-lua-sol2 CLI launcher is also provided: [raylib-lua-sol2](bin/raylib-lu
 
 Note that launcher can also be compiled for other platforms, just need to link with Lua, raylib and sol2 libraries. For more details, just check comments on sources.
 
+### Build
+
+```
+mkdir build
+cd build
+cmake ..
+make
+make test
+```
+
 # License
 
-raylib-lua-sol2 is licensed under an unmodified zlib/libpng license, which is an OSI-certified, 
+raylib-lua-sol2 is licensed under an unmodified zlib/libpng license, which is an OSI-certified,
 BSD-like license that allows static linking with closed source software. Check [LICENSE](LICENSE) for further details.
-	
+
 *Copyright (c) 2019 Rob Loach ([@RobLoach](https://twitter.com/RobLoach))*

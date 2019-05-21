@@ -180,12 +180,22 @@ void raylib_lua_sol2_structs(sol::state &lua) {
     "charsCount", &Font::charsCount,
     "chars", &Font::chars);
   lua.new_usertype<Camera3D>("Camera3D",
+    sol::call_constructor, sol::factories(
+      [](){
+        return Camera2D{};
+      }
+    ),
     "position", &Camera3D::position,
     "target", &Camera3D::target,
     "up", &Camera3D::up,
     "fovy", &Camera3D::fovy,
     "type", &Camera3D::type);
   lua.new_usertype<Camera2D>("Camera2D",
+    sol::call_constructor, sol::factories(
+      [](){
+        return Camera2D{};
+      }
+    ),
     "offset", &Camera2D::offset,
     "target", &Camera2D::target,
     "rotation", &Camera2D::rotation,
@@ -243,6 +253,11 @@ void raylib_lua_sol2_structs(sol::state &lua) {
     "framePoses", &ModelAnimation::framePoses);
   */
   lua.new_usertype<Ray>("Ray",
+    sol::call_constructor, sol::factories(
+      [](){
+        return Ray{};
+      }
+    ),
     "position", &Ray::position,
     "direction", &Ray::direction);
   lua.new_usertype<RayHitInfo>("RayHitInfo",
