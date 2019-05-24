@@ -1,11 +1,11 @@
-#ifndef RAYLIB_LUA_SOL2_
-#define RAYLIB_LUA_SOL2_
+#ifndef RAYLIB_LUA_SOL_
+#define RAYLIB_LUA_SOL_
 
 #include <raylib.h>
 #include <sol/sol.hpp>
 #include <iostream>
 
-void raylib_lua_sol2_color(sol::state &lua) {
+void raylib_lua_sol_color(sol::state &lua) {
 	lua.new_usertype<Color>("Color",
     sol::call_constructor, sol::factories(
       [](){
@@ -50,7 +50,7 @@ void raylib_lua_sol2_color(sol::state &lua) {
 	lua["RAYWHITE"] = Color(RAYWHITE);
 }
 
-void raylib_lua_sol2_structs(sol::state &lua) {
+void raylib_lua_sol_structs(sol::state &lua) {
 	lua.new_usertype<Vector2>("Vector2",
     sol::call_constructor, sol::factories(
       [](){
@@ -303,7 +303,7 @@ void raylib_lua_sol2_structs(sol::state &lua) {
 #define RAYLIB_LUA_SOL2_ENUM_DEF(x) \
   #x, x
 
-void raylib_lua_sol2_enums(sol::state &lua) {
+void raylib_lua_sol_enums(sol::state &lua) {
 	lua.new_enum("ConfigFlag",
 		"FLAG_SHOW_LOGO", FLAG_SHOW_LOGO,
 		"FLAG_FULLSCREEN_MODE", FLAG_FULLSCREEN_MODE,
@@ -640,7 +640,7 @@ void raylib_lua_sol2_enums(sol::state &lua) {
 #define RAYLIB_LUA_SOL2_ADD_FUNCTION(x) \
   lua.set_function(#x, x)
 
-void raylib_lua_sol2_functions(sol::state &lua) {
+void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL2_ADD_FUNCTION(InitWindow);
   RAYLIB_LUA_SOL2_ADD_FUNCTION(WindowShouldClose);
   RAYLIB_LUA_SOL2_ADD_FUNCTION(CloseWindow);
@@ -1096,11 +1096,11 @@ void raylib_lua_sol2_functions(sol::state &lua) {
   RAYLIB_LUA_SOL2_ADD_FUNCTION(SetAudioStreamPitch);
 }
 
-void raylib_lua_sol2(sol::state &lua) {
-	raylib_lua_sol2_color(lua);
-	raylib_lua_sol2_structs(lua);
-	raylib_lua_sol2_enums(lua);
-  raylib_lua_sol2_functions(lua);
+void raylib_lua_sol(sol::state &lua) {
+	raylib_lua_sol_color(lua);
+	raylib_lua_sol_structs(lua);
+	raylib_lua_sol_enums(lua);
+  raylib_lua_sol_functions(lua);
 }
 
 #endif // RAYLIB_LUA_SOL2_

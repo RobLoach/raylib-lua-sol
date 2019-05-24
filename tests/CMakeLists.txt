@@ -25,7 +25,7 @@ endmacro()
 find_package(Lua 5.3 REQUIRED)
 
 find_package(Raylib)
-find_package(Sol2)
+find_package(Sol)
 list(APPEND SOURCES catch.hpp raylib_test.cpp)
 list(APPEND LIBS raylib)
 list(APPEND LIBS ${LUA_LIBRARY})
@@ -42,7 +42,7 @@ target_compile_definitions(raylib_test PUBLIC -DLUA)
 
 target_include_directories(raylib_test PUBLIC
     ${raylib_SOURCE_DIR}/src
-    ${sol2_SOURCE_DIR}/include
+    ${sol_SOURCE_DIR}/include
     ${LUA_INCLUDE_DIR}
 )
 

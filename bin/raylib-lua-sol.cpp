@@ -1,12 +1,12 @@
 /*******************************************************************************************
 *
-*   raylib-lua-sol2 v0.0.1 - raylib Lua Sol2 Launcher
+*   raylib-lua-sol v0.0.1 - Launcher for raylib Lua applications.
 *
 *   DEPENDENCIES:
 *
-*   raylib 2.0 - This program uses latest raylib version (www.raylib.com)
-*   Sol2       - https://github.com/ThePhD/sol2/
-*   Lua
+*   raylib - http://www.raylib.com
+*   sol    - https://github.com/ThePhD/sol2/
+*   Lua    - http://www.lua.org
 *
 *   COMPILATION (GCC):
 *
@@ -18,9 +18,9 @@
 *   USAGE:
 *
 *     Just launch your raylib .lua file from command line:
-*       ./raylib-lua-sol2 core_basic_window.lua
+*       ./raylib-lua-sol core_basic_window.lua
 *
-*     or drag & drop your .lua file over raylib-lua-sol2.exe
+*     or drag & drop your .lua file over raylib-lua-sol.exe
 *
 *
 *   LICENSE: zlib/libpng
@@ -48,7 +48,7 @@
 #include <string>
 
 #include "raylib.h"
-#include "../include/raylib-lua-sol2.hpp"
+#include "../include/raylib-lua-sol.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 
     switch (argc) {
         case 0:
-            executableName = "raylib-lua-sol2";
+            executableName = "raylib-lua-sol";
             fileToLoad = "main.lua";
             break;
         case 1:
@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
     sol::state lua;
 
     // Bootstrap Raylib.
-    raylib_lua_sol2(lua);
+    raylib_lua_sol(lua);
 
     // Execute the script.
     lua.script_file(fileToLoad);

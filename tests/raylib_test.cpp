@@ -3,13 +3,13 @@
 
 #include <sol/sol.hpp>
 
-#include "../include/raylib-lua-sol2.hpp"
+#include "../include/raylib-lua-sol.hpp"
 #include "catch.hpp"
 
 TEST_CASE("raylib_test functions work", "[raylib_test]" ) {
 	// Initialize the environment.
 	sol::state lua;
-	raylib_lua_sol2(lua);
+	raylib_lua_sol(lua);
 
 	// IsWindowReady
 	auto r1 = lua.safe_script("windowReady = IsWindowReady()", sol::script_pass_on_error);
