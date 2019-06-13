@@ -1,21 +1,44 @@
 <img align="left" src="logo/raylib-lua_256x256.png" width=256>
 
-[Lua](http://www.lua.org/) bindings for [raylib](https://www.raylib.com/), a simple and easy-to-use library to enjoy videogames programming, through [sol](https://github.com/ThePhD/sol2) (www.raylib.com)
+[Lua](http://www.lua.org/) bindings for [raylib](https://www.raylib.com/), a simple and easy-to-use library to enjoy videogames programming, with [sol](https://github.com/ThePhD/sol2) (www.raylib.com)
 
-raylib-lua-sol binding is self-contained in a header-only file: [raylib-lua-sol.h](include/raylib-lua-sol.h). Just include that file
-in your project to allow loading and execution of raylib code written in Lua. Check [code examples](examples) for reference.
+*raylib-lua-sol* bindings are self-contained in a header-only file: [raylib-lua-sol.h](include/raylib-lua-sol.h). Just include that file
+in your project to allow loading and execution of raylib code written in Lua and Sol.
 
-raylib-lua-sol could be useful for prototyping, tools development, graphic applications, embedded systems and education.
+*raylib-lua-sol* could be useful for prototyping, tools development, graphic applications, embedded systems and education.
 
-### CLI
+Ready to learn? Check out the [code examples](examples)!
 
-A raylib-lua-sol CLI launcher is also provided: [raylib-lua-sol](bin/raylib-lua-sol.cpp). This launcher allows you to run raylib lua programs from command line, or just with *drag & drop* of .lua files into *raylib-lua-sol.exe*.
+## Example
+
+``` lua
+local screenWidth = 800
+local screenHeight = 450
+
+InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window")
+
+SetTargetFPS(60)
+
+while not WindowShouldClose() do
+    BeginDrawing()
+        ClearBackground(RAYWHITE)
+        DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY)
+    EndDrawing()
+end
+CloseWindow()
+```
+
+## CLI
+
+A [`raylib-lua-sol`](bin/raylib-lua-sol.cpp) CLI launcher is provided. This launcher allows you to run raylib lua programs from command line, or just with *drag & drop* of .lua files into *raylib-lua-sol.exe*.
 
 Note that launcher can also be compiled for other platforms, just need to link with Lua, raylib and sol libraries. For more details, just check comments on sources.
 
-### Build
+## Build
 
 ```
+git clone https://github.com/RobLoach/raylib-lua-sol.git
+cd raylib-lua-sol
 mkdir build
 cd build
 cmake ..

@@ -1,9 +1,9 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include <string>
 
 #include <sol/sol.hpp>
-
 #include "../include/raylib-lua-sol.hpp"
+
+#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 
 TEST_CASE("raylib_test functions work", "[raylib_test]" ) {
@@ -11,25 +11,38 @@ TEST_CASE("raylib_test functions work", "[raylib_test]" ) {
 	sol::state lua;
 	raylib_lua_sol(lua);
 
-	// IsWindowReady
-	auto r1 = lua.safe_script("windowReady = IsWindowReady()", sol::script_pass_on_error);
-  REQUIRE(r1.valid());
-	bool ready = lua["windowReady"];
-	CHECK(ready == false);
+  SECTION("IsWindowReady") {
+  	auto script = lua.safe_script("windowReady = IsWindowReady()", sol::script_pass_on_error);
+    REQUIRE(script.valid());
+  	bool ready = lua["windowReady"];
+  	CHECK(ready == false);
+  }
 
-  // Enums
-  ConfigFlag d = lua["ConfigFlag"]["FLAG_FULLSCREEN_MODE"];
-  REQUIRE(d == ConfigFlag::FLAG_FULLSCREEN_MODE);
-  auto r2 = lua.safe_script("ConfigFlag.FLAG_FULLSCREEN_MODE = 50", sol::script_pass_on_error);
-  REQUIRE_FALSE(r2.valid());
-  d = lua["ConfigFlag"]["FLAG_FULLSCREEN_MODE"];
-  REQUIRE(d == ConfigFlag::FLAG_FULLSCREEN_MODE);
-  BlendMode blendmodeMultiplied = lua["BlendMode"]["BLEND_MULTIPLIED"];
-  REQUIRE(blendmodeMultiplied == BlendMode::BLEND_MULTIPLIED);
+  SECTION("FILES") {
+    auto script = lua.safe_script("fileExtension = GetExtension('something.lua')", sol::script_pass_on_error);
+    REQUIRE(script.valid());
+    std::string fileExtension = lua["fileExtension"];
+    CHECK(fileExtension == "lua");
+  }
 
-  // Rectangle
-  auto r3 = lua.safe_script("theRect = Rectangle(10.0, 20.0, 30.0, 40.0)", sol::script_pass_on_error);
-  REQUIRE(r3.valid());
-  float w = lua["theRect"]["width"];
-  REQUIRE(w == 30);
+  SECTION("ENUMS") {
+    // Check that enums are available.
+    ConfigFlag flagFullScreenMode = lua["ConfigFlag"]["FLAG_FULLSCREEN_MODE"];
+    CHECK(flagFullScreenMode == ConfigFlag::FLAG_FULLSCREEN_MODE);
+
+    // Check another enum.
+    BlendMode blendmodeMultiplied = lua["BlendMode"]["BLEND_MULTIPLIED"];
+    CHECK(blendmodeMultiplied == BlendMode::BLEND_MULTIPLIED);
+
+    // Make sure that the enums are constant.
+    auto script = lua.safe_script("ConfigFlag.FLAG_FULLSCREEN_MODE = 50", sol::script_pass_on_error);
+    REQUIRE_FALSE(script.valid());
+  }
+
+  SECTION("Rectangle") {
+    auto script = lua.safe_script("theRect = Rectangle(10.0, 20.0, 30.0, 40.0)", sol::script_pass_on_error);
+    REQUIRE(script.valid());
+    float w = lua["theRect"]["width"];
+    CHECK(w == 30.0f);
+  }
 }
