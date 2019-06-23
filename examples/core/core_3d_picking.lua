@@ -40,11 +40,11 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     -- Update
     ---------------------------------------------------------------------------------------
     camera = UpdateCamera(camera)           -- Update camera
-    
-    if (IsMouseButtonPressed(MOUSE.LEFT_BUTTON)) then
+
+    if (IsMouseButtonPressed(MouseButton.MOUSE_LEFT_BUTTON)) then
         -- NOTE: This function is NOT WORKING properly!
         ray = GetMouseRay(GetMousePosition(), camera)
-        
+
         -- Check collision between ray and box
         collision = CheckCollisionRayBox(ray,
                         BoundingBox(Vector3(cubePosition.x - cubeSize.x/2, cubePosition.y - cubeSize.y/2, cubePosition.z - cubeSize.z/2),
@@ -71,16 +71,16 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
                 DrawCube(cubePosition, cubeSize.x, cubeSize.y, cubeSize.z, GRAY)
                 DrawCubeWires(cubePosition, cubeSize.x, cubeSize.y, cubeSize.z, DARKGRAY)
             end
-            
+
             DrawRay(ray, MAROON)
-            
+
             DrawGrid(10, 1.0)
 
         End3dMode()
-        
+
         DrawText("Try selecting the box with mouse!", 240, 10, 20, DARKGRAY)
-        
-        if (collision) then 
+
+        if (collision) then
             DrawText("BOX SELECTED", (screenWidth - MeasureText("BOX SELECTED", 30))/2, screenHeight*0.1, 30, GREEN)
         end
 

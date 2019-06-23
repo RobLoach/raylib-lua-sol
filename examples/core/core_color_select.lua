@@ -49,7 +49,7 @@ while not WindowShouldClose() do    -- Detect window close button or ESC key
     for i = 1, NUM_RECTANGLES do    -- Iterate along all the rectangles
         if (CheckCollisionPointRec(mousePoint, colorsRecs[i])) then
             colors[i].a = 120
-            if (IsMouseButtonPressed(MOUSE.LEFT_BUTTON)) then selected[i] = not selected[i] end
+            if (IsMouseButtonPressed(MouseButton.MOUSE_LEFT_BUTTON)) then selected[i] = not selected[i] end
         else colors[i].a = 255 end
     end
     ---------------------------------------------------------------------------------------
