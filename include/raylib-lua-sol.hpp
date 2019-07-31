@@ -169,20 +169,26 @@ void raylib_lua_sol_structs(sol::state &lua) {
     "type", &NPatchInfo::type);
   lua.new_usertype<CharInfo>("CharInfo",
     "value", &CharInfo::value,
-    "rec", &CharInfo::rec,
     "offsetX", &CharInfo::offsetX,
     "offsetY", &CharInfo::offsetY,
     "advanceX", &CharInfo::advanceX,
-    "data", &CharInfo::data);
+    "image", &CharInfo::image);
   lua.new_usertype<Font>("Font",
-    "Texture", &Font::texture,
     "baseSize", &Font::baseSize,
     "charsCount", &Font::charsCount,
+    "texture", &Font::texture,
+    "recs", &Font::recs,
     "chars", &Font::chars);
   lua.new_usertype<Camera3D>("Camera3D",
     sol::call_constructor, sol::factories(
       [](){
-        return Camera2D{};
+        return Camera3D{};
+      },
+      [](Vector3 position, Vector3 target, Vector3 up, float fovy, int type){
+        return Camera3D{position, target, up, fovy, type};
+      },
+      [](Vector3 position, Vector3 target, Vector3 up){
+        return Camera3D{position, target, up, 0, 0};
       }
     ),
     "position", &Camera3D::position,
@@ -194,6 +200,12 @@ void raylib_lua_sol_structs(sol::state &lua) {
     sol::call_constructor, sol::factories(
       [](){
         return Camera2D{};
+      },
+      [](Vector2 offset, Vector2 target, float rotation, float zoom){
+        return Camera2D{offset, target, rotation, zoom};
+      },
+      [](Vector2 offset, Vector2 target){
+        return Camera2D{offset, target, 0, 0};
       }
     ),
     "offset", &Camera2D::offset,
@@ -277,12 +289,12 @@ void raylib_lua_sol_structs(sol::state &lua) {
   lua.new_usertype<AudioStream>("AudioStream",
     "sampleRate", &AudioStream::sampleRate,
     "sampleSize", &AudioStream::sampleSize,
-    "channels", &AudioStream::channels,
-    "buffer", &AudioStream::buffer);
+    "channels", &AudioStream::channels);
+    //"buffer", &AudioStream::buffer);
   lua.new_usertype<Sound>("Sound",
     "sampleCount", &Sound::sampleCount,
     "stream", &Sound::stream);
-  lua.new_usertype<Sound>("Music",
+  lua.new_usertype<Music>("Music",
     "ctxType", &Music::ctxType,
     "ctxData", &Music::ctxData,
     "sampleCount", &Music::sampleCount,
@@ -1047,9 +1059,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(CloseAudioDevice);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsAudioDeviceReady);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetMasterVolume);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadWave);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(LoadWaveEx);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadSound);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadSoundFromWave);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UpdateSound);
@@ -1057,20 +1067,20 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadSound);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ExportWave);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ExportWaveAsCode);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(PlaySound);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(StopSound);
   RAYLIB_LUA_SOL_ADD_FUNCTION(PauseSound);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ResumeSound);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(StopSound);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(PlaySoundMulti);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(StopSoundMulti);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetSoundsPlaying);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsSoundPlaying);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetSoundVolume);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetSoundPitch);
   RAYLIB_LUA_SOL_ADD_FUNCTION(WaveFormat);
   RAYLIB_LUA_SOL_ADD_FUNCTION(WaveCopy);
   RAYLIB_LUA_SOL_ADD_FUNCTION(WaveCrop);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(GetWaveData);
-
-  // TODO: Add LoadMusicStream
+  RAYLIB_LUA_SOL_ADD_FUNCTION(*GetWaveData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadMusicStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadMusicStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(PlayMusicStream);
@@ -1084,7 +1094,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetMusicLoopCount);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMusicTimeLength);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMusicTimePlayed);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(InitAudioStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UpdateAudioStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CloseAudioStream);
