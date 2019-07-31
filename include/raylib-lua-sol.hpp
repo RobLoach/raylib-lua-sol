@@ -274,19 +274,21 @@ void raylib_lua_sol_structs(sol::state &lua) {
     "sampleSize", &Wave::sampleSize,
     "channels", &Wave::channels,
     "data", &Wave::data);
-  lua.new_usertype<Sound>("Sound",
-    "audioBuffer", &Sound::audioBuffer,
-    "source", &Sound::source,
-    "buffer", &Sound::buffer,
-    "format", &Sound::format);
   lua.new_usertype<AudioStream>("AudioStream",
     "sampleRate", &AudioStream::sampleRate,
     "sampleSize", &AudioStream::sampleSize,
     "channels", &AudioStream::channels,
-    "audioBuffer", &AudioStream::audioBuffer,
-    "format", &AudioStream::format,
-    "source", &AudioStream::source,
-    "buffers", &AudioStream::buffers);
+    "buffer", &AudioStream::buffer);
+  lua.new_usertype<Sound>("Sound",
+    "sampleCount", &Sound::sampleCount,
+    "stream", &Sound::stream);
+  lua.new_usertype<Sound>("Music",
+    "ctxType", &Music::ctxType,
+    "ctxData", &Music::ctxData,
+    "sampleCount", &Music::sampleCount,
+    "sampleLeft", &Music::sampleLeft,
+    "loopCount", &Music::loopCount,
+    "stream", &Music::stream);
   lua.new_usertype<VrDeviceInfo>("VrDeviceInfo",
     "hResolution", &VrDeviceInfo::hResolution,
     "vResolution", &VrDeviceInfo::vResolution,
@@ -1041,7 +1043,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(BeginVrDrawing);
   RAYLIB_LUA_SOL_ADD_FUNCTION(EndVrDrawing);
 
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(InitAudioDevice);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CloseAudioDevice);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsAudioDeviceReady);
@@ -1070,7 +1071,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetWaveData);
 
   // TODO: Add LoadMusicStream
-  //RAYLIB_LUA_SOL_ADD_FUNCTION(LoadMusicStream);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(LoadMusicStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadMusicStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(PlayMusicStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UpdateMusicStream);
