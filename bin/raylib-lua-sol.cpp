@@ -84,10 +84,15 @@ int main(int argc, char *argv[])
     // Build the Lua environment.
     sol::state lua;
 
+    // Load some of the Lua base libraries.
+    lua.open_libraries(sol::lib::base, sol::lib::table, sol::lib::math, sol::lib::string);
+
     // Bootstrap Raylib.
     raylib_lua_sol(lua);
 
     // Execute the script.
+    // TODO: Error detection
+    // TODO: Use JIT compiler
     lua.script_file(fileToLoad);
 
     return 0;

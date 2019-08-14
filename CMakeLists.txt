@@ -10,6 +10,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include_directories(include)
 
 add_subdirectory(bin)
+add_subdirectory(examples)
 
 include(CTest)
 enable_testing()
