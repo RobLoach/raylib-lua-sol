@@ -27,7 +27,7 @@ local mapPosition = Vector3(-8.0, 0.0, -8.0)            -- Set model position (d
 
 UnloadImage(image)                 -- Unload heightmap image from RAM, already uploaded to VRAM
 
-SetCameraMode(camera, CameraMode.ORBITAL)   -- Set an orbital camera mode
+SetCameraMode(camera, CAMERA_ORBITAL)   -- Set an orbital camera mode
 
 SetTargetFPS(60)                            -- Set our game to run at 60 frames-per-second
 ----------------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
             DrawGrid(20, 1.0)
 
         End3dMode()
-        
+
         DrawTexture(texture, screenWidth - texture.width - 20, 20, WHITE)
         DrawRectangleLines(screenWidth - texture.width - 20, 20, texture.width, texture.height, GREEN)
 

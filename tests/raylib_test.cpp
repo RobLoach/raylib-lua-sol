@@ -27,12 +27,12 @@ TEST_CASE("raylib_test functions work", "[raylib_test]" ) {
 
   SECTION("ENUMS") {
     // Check that enums are available.
-    ConfigFlag flagFullScreenMode = lua["ConfigFlag"]["FLAG_FULLSCREEN_MODE"];
-    CHECK(flagFullScreenMode == ConfigFlag::FLAG_FULLSCREEN_MODE);
+    ConfigFlag flagFullScreenMode = lua["FLAG_FULLSCREEN_MODE"];
+    CHECK(flagFullScreenMode == FLAG_FULLSCREEN_MODE);
 
     // Check another enum.
-    BlendMode blendmodeMultiplied = lua["BlendMode"]["BLEND_MULTIPLIED"];
-    CHECK(blendmodeMultiplied == BlendMode::BLEND_MULTIPLIED);
+    BlendMode blendmodeMultiplied = lua["BLEND_MULTIPLIED"];
+    CHECK(blendmodeMultiplied == BLEND_MULTIPLIED);
 
     // Make sure that the enums are constant.
     auto script = lua.safe_script("ConfigFlag.FLAG_FULLSCREEN_MODE = 50", sol::script_pass_on_error);

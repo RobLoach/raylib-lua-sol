@@ -56,12 +56,12 @@ SetTargetFPS(60)               -- Set our game to run at 60 frames-per-second
 while not WindowShouldClose() do    -- Detect window close button or ESC key
     -- Update
     ------------------------------------------------------------------------------------
-    if IsMouseButtonDown(MouseButton.MOUSE_LEFT_BUTTON) then
+    if IsMouseButtonDown(MOUSE_LEFT_BUTTON) then
         -- Create more bunnies
         for i = 1, 100 do
             if #bunnies < MAX_BUNNIES then
-                local speed = Vector2(GetRandomValue(-250, 250)/60, GetRandomValue(-250, 250)/60)
-                local color = Color(GetRandomValue(50, 240), GetRandomValue(80, 240),GetRandomValue(100, 240), 255)
+                local speed = Vector2(GetRandomValue(-250, 250) / 60, GetRandomValue(-250, 250) / 60)
+                local color = Color(GetRandomValue(50, 240), GetRandomValue(80, 240), GetRandomValue(100, 240), 255)
                 --bunnies[#bunnies] = Bunny:new(nil, GetMousePosition(), speed, color)
                 table.insert(bunnies, Bunny:new(GetMousePosition(), speed, color))
             end
@@ -92,7 +92,7 @@ while not WindowShouldClose() do    -- Detect window close button or ESC key
 
         DrawRectangle(0, 0, screenWidth, 40, BLACK)
         DrawText("bunnies: " .. #bunnies, 120, 10, 20, GREEN)
-        DrawText("batched draw calls: " .. (1 + #bunnies/MAX_BATCH_ELEMENTS), 320, 10, 20, MAROON)
+        DrawText("batched draw calls: " .. (1 + #bunnies / MAX_BATCH_ELEMENTS), 320, 10, 20, MAROON)
         -- DrawText(FormatText("bunnies: %i", #bunnies), 120, 10, 20, GREEN)
         -- DrawText(FormatText("batched draw calls: %i", 1 + #bunnies/MAX_BATCH_ELEMENTS), 320, 10, 20, MAROON)
 

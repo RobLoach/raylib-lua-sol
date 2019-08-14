@@ -30,7 +30,7 @@ local ray = Ray(Vector3(0, 0, 0), Vector3(0, 0, 0)) -- Picking line ray
 
 local collision = false
 
-SetCameraMode(camera, CameraMode.FREE)      -- Set a free camera mode
+SetCameraMode(camera, CAMERA_FREE)      -- Set a free camera mode
 
 SetTargetFPS(60)                            -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     ---------------------------------------------------------------------------------------
     camera = UpdateCamera(camera)           -- Update camera
 
-    if (IsMouseButtonPressed(MouseButton.MOUSE_LEFT_BUTTON)) then
+    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) then
         -- NOTE: This function is NOT WORKING properly!
         ray = GetMouseRay(GetMousePosition(), camera)
 

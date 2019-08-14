@@ -34,7 +34,7 @@ end
 
 local playerPosition = Vector3(4.0, 2.0, 4.0)       -- Define player position
 
-SetCameraMode(camera, CameraMode.FIRST_PERSON)      -- Set a first person camera mode
+SetCameraMode(camera, CAMERA_FIRST_PERSON)      -- Set a first person camera mode
 
 SetTargetFPS(60)                                    -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ while not WindowShouldClose() do                    -- Detect window close butto
             DrawCube(Vector3(-16.0, 2.5, 0.0), 1.0, 5.0, 32.0, BLUE)     -- Draw a blue wall
             DrawCube(Vector3(16.0, 2.5, 0.0), 1.0, 5.0, 32.0, LIME)      -- Draw a green wall
             DrawCube(Vector3(0.0, 2.5, 16.0), 32.0, 5.0, 1.0, GOLD)      -- Draw a yellow wall
-        
+
             -- Draw some cubes around
             for i = 1, MAX_COLUMNS do
                 DrawCube(positions[i], 2.0, heights[i], 2.0, colors[i])
@@ -66,7 +66,7 @@ while not WindowShouldClose() do                    -- Detect window close butto
             end
 
         End3dMode()
-        
+
         DrawRectangle( 10, 10, 220, 70, Fade(SKYBLUE, 0.5))
         DrawRectangleLines( 10, 10, 220, 70, BLUE)
 

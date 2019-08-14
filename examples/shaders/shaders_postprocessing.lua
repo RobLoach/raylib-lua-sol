@@ -54,7 +54,7 @@ local postproShaderText = {
 local screenWidth = 800
 local screenHeight = 450
 
-SetConfigFlags(FLAG.MSAA_4X_HINT)      -- Enable Multi Sampling Anti Aliasing 4x (if available)
+SetConfigFlags(FLAG_MSAA_4X_HINT)      -- Enable Multi Sampling Anti Aliasing 4x (if available)
 
 InitWindow(screenWidth, screenHeight, "raylib [shaders] example - postprocessing shaders")
 
@@ -91,7 +91,7 @@ local currentShader = FX_GRAYSCALE;
 local target = LoadRenderTexture(screenWidth, screenHeight)
 
 -- Setup orbital camera
-SetCameraMode(camera, CameraMode.ORBITAL)   -- Set an orbital camera mode
+SetCameraMode(camera, CAMERA_ORBITAL)   -- Set an orbital camera mode
 
 SetTargetFPS(60)                            -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -101,10 +101,10 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     -- Update
     ---------------------------------------------------------------------------------------
     camera = UpdateCamera(camera)           -- Update camera
-    
+
     if (IsKeyPressed(KEY.RIGHT)) then currentShader = currentShader + 1
     elseif (IsKeyPressed(KEY.LEFT)) then currentShader = currentShader - 1 end
-    
+
     if (currentShader > MAX_POSTPRO_SHADERS) then currentShader = 1
     elseif (currentShader < 1) then currentShader = MAX_POSTPRO_SHADERS end
     ---------------------------------------------------------------------------------------
@@ -124,26 +124,26 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
                 DrawGrid(10, 1.0)      -- Draw a grid
 
             End3dMode()
-            
+
         EndTextureMode()           -- End drawing to texture (now we have a texture available for next passes)
-        
+
         BeginShaderMode(shaders[currentShader])
-        
+
             -- NOTE: Render texture must be y-flipped due to default OpenGL coordinates (left-bottom)
             DrawTextureRec(target.texture, Rectangle(0, 0, target.texture.width, -target.texture.height), Vector2(0, 0), WHITE)
-            
+
         EndShaderMode()
-        
+
         DrawRectangle(0, 9, 580, 30, Fade(LIGHTGRAY, 0.7))
-        
+
         DrawText("(c) Dwarf 3D model by David Moreno", screenWidth - 200, screenHeight - 20, 10, DARKGRAY)
-        
+
         DrawText("CURRENT POSTPRO SHADER:", 10, 15, 20, BLACK)
         DrawText(postproShaderText[currentShader], 330, 15, 20, RED)
         DrawText("< >", 540, 10, 30, DARKBLUE)
-        
+
         DrawFPS(700, 15)
-            
+
     EndDrawing()
     ---------------------------------------------------------------------------------------
 end

@@ -34,7 +34,7 @@ dwarf.material.texDiffuse = texture                                    -- Set dw
 
 local position = Vector3(0.0, 0.0, 0.0)                                -- Set model position
 
-local shader = LoadShader("resources/shaders/glsl330/base.vs", 
+local shader = LoadShader("resources/shaders/glsl330/base.vs",
                           "resources/shaders/glsl330/swirl.fs")        -- Load postpro shader
 
 -- Get variable (uniform) location on the shader to connect with the program
@@ -47,7 +47,7 @@ local swirlCenter = { screenWidth/2, screenHeight/2 }
 local target = LoadRenderTexture(screenWidth, screenHeight)
 
 -- Setup orbital camera
-SetCameraMode(camera, CameraMode.ORBITAL)   -- Set an orbital camera mode
+SetCameraMode(camera, CAMERA_ORBITAL)   -- Set an orbital camera mode
 
 SetTargetFPS(60)                            -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
     -- Send new value to the shader to be used on drawing
     SetShaderValue(shader, swirlCenterLoc, swirlCenter)
-    
+
     camera = UpdateCamera(camera)           -- Update camera
     ---------------------------------------------------------------------------------------
 
@@ -72,7 +72,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     BeginDrawing()
 
         ClearBackground(RAYWHITE)
-        
+
         BeginTextureMode(target)            -- Enable drawing to texture
 
             Begin3dMode(camera)
@@ -82,18 +82,18 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
                 DrawGrid(10, 1.0)           -- Draw a grid
 
             End3dMode()
-            
+
             DrawText("TEXT DRAWN IN RENDER TEXTURE", 200, 10, 30, RED)
-        
+
         EndTextureMode()           -- End drawing to texture (now we have a texture available for next passes)
-        
+
         BeginShaderMode(shader)
-        
+
             -- NOTE: Render texture must be y-flipped due to default OpenGL coordinates (left-bottom)
             DrawTextureRec(target.texture, Rectangle(0, 0, target.texture.width, -target.texture.height), Vector2(0, 0), WHITE)
-        
+
         EndShaderMode()
-        
+
         DrawText("(c) Dwarf 3D model by David Moreno", screenWidth - 200, screenHeight - 20, 10, GRAY)
 
         DrawFPS(10, 10)

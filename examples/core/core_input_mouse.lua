@@ -28,9 +28,9 @@ while not WindowShouldClose() do    -- Detect window close button or ESC key
     ------------------------------------------------------------------------------------
     ballPosition = GetMousePosition()
 
-    if (IsMouseButtonPressed(MouseButton.MOUSE_LEFT_BUTTON)) then ballColor = MAROON
-    elseif (IsMouseButtonPressed(MouseButton.MOUSE_MIDDLE_BUTTON)) then ballColor = LIME
-    elseif (IsMouseButtonPressed(MouseButton.MOUSE_RIGHT_BUTTON)) then ballColor = DARKBLUE
+    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) then ballColor = MAROON
+    elseif (IsMouseButtonPressed(MOUSE_MIDDLE_BUTTON)) then ballColor = LIME
+    elseif (IsMouseButtonPressed(MOUSE_RIGHT_BUTTON)) then ballColor = DARKBLUE
     end
     ------------------------------------------------------------------------------------
 

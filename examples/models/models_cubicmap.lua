@@ -31,7 +31,7 @@ local mapPosition = Vector3(-16.0, 0.0, -8.0)          -- Set model position
 
 UnloadImage(image)     -- Unload cubesmap image from RAM, already uploaded to VRAM
 
-SetCameraMode(camera, CameraMode.ORBITAL)   -- Set an orbital camera mode
+SetCameraMode(camera, CAMERA_ORBITAL)   -- Set an orbital camera mode
 
 SetTargetFPS(60)                            -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -54,10 +54,10 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
             DrawModel(map, mapPosition, 1.0, WHITE)
 
         End3dMode()
-        
+
         DrawTextureEx(cubicmap, (Vector2)(screenWidth - cubicmap.width*4 - 20, 20), 0.0, 4.0, WHITE)
         DrawRectangleLines(screenWidth - cubicmap.width*4 - 20, 20, cubicmap.width*4, cubicmap.height*4, GREEN)
-        
+
         DrawText("cubicmap image used to", 658, 90, 10, GRAY)
         DrawText("generate map 3d model", 658, 104, 10, GRAY)
 

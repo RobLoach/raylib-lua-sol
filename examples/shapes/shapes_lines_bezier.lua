@@ -27,8 +27,8 @@ SetTargetFPS(60)       -- Set target frames-per-second
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    if (IsMouseButtonDown(MouseButton.MOUSE_LEFT_BUTTON)) then startPoint = GetMousePosition()
-    elseif (IsMouseButtonDown(MouseButton.MOUSE_RIGHT_BUTTON)) then endPoint = GetMousePosition() end
+    if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) then startPoint = GetMousePosition()
+    elseif (IsMouseButtonDown(MOUSE_RIGHT_BUTTON)) then endPoint = GetMousePosition() end
     ---------------------------------------------------------------------------------------
 
     -- Draw

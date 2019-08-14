@@ -30,7 +30,7 @@ local camera = Camera(Vector3(3.0, 3.0, 3.0), Vector3(0.0, 1.5, 0.0), Vector3(0.
 
 local dwarf = LoadModel("resources/model/dwarf.obj")                   -- Load OBJ model
 local texture = LoadTexture("resources/model/dwarf_diffuse.png")       -- Load model texture
-local shader = LoadShader("resources/shaders/glsl330/base.vs", 
+local shader = LoadShader("resources/shaders/glsl330/base.vs",
                           "resources/shaders/glsl330/grayscale.fs")    -- Load model shader
 
 dwarf.material.shader = shader            -- Set shader effect to 3d model
@@ -39,7 +39,7 @@ dwarf.material.texDiffuse = texture       -- Bind texture to model
 local position = Vector3(0.0, 0.0, 0.0)   -- Set model position
 
 -- Setup orbital camera
-SetCameraMode(camera, CameraMode.ORBITAL) -- Set an orbital camera mode
+SetCameraMode(camera, CAMERA_ORBITAL) -- Set an orbital camera mode
 
 SetTargetFPS(60)                          -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -64,7 +64,7 @@ while not WindowShouldClose() do          -- Detect window close button or ESC k
             DrawGrid(10, 1.0)     -- Draw a grid
 
         End3dMode()
-        
+
         DrawText("(c) Dwarf 3D model by David Moreno", screenWidth - 200, screenHeight - 20, 10, GRAY)
 
         DrawFPS(10, 10)
