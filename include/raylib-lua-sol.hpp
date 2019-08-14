@@ -1080,7 +1080,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(WaveFormat);
   RAYLIB_LUA_SOL_ADD_FUNCTION(WaveCopy);
   RAYLIB_LUA_SOL_ADD_FUNCTION(WaveCrop);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(*GetWaveData);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetWaveData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadMusicStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadMusicStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(PlayMusicStream);
