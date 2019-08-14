@@ -21,7 +21,7 @@
 local screenWidth = 800
 local screenHeight = 450
 
-SetConfigFlags(FLAG.MSAA_4X_HINT)      -- Enable Multi Sampling Anti Aliasing 4x (if available)
+SetConfigFlags(FLAG_MSAA_4X_HINT)      -- Enable Multi Sampling Anti Aliasing 4x (if available)
 
 InitWindow(screenWidth, screenHeight, "raylib [shaders] example - model shader")
 

@@ -14,7 +14,7 @@
 local screenWidth = 800
 local screenHeight = 450
 
-SetConfigFlags(FLAG.MSAA_4X_HINT);
+SetConfigFlags(FLAG_MSAA_4X_HINT);
 InitWindow(screenWidth, screenHeight, "raylib [shapes] example - cubic-bezier lines")
 
 local startPoint = Vector2(0, 0)
