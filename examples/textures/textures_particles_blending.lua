@@ -36,7 +36,7 @@ local gravity = 3.0
 
 local smoke = LoadTexture("resources/smoke.png")
 
-local blending = BlendMode.BLEND_ALPHA
+local blending = BLEND_ALPHA
 
 SetTargetFPS(60)
 -------------------------------------------------------------------------------------------
@@ -70,9 +70,9 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
         end
     end
 
-    if (IsKeyPressed(KeyboardKey.KEY_SPACE)) then
-        if (blending == BlendMode.BLEND_ALPHA) then blending = BlendMode.BLEND_ADDITIVE
-        else blending = BlendMode.BLEND_ALPHA end
+    if (IsKeyPressed(KEY_SPACE)) then
+        if (blending == BLEND_ALPHA) then blending = BLEND_ADDITIVE
+        else blending = BLEND_ALPHA end
     end
     ---------------------------------------------------------------------------------------
 
@@ -98,7 +98,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         DrawText("PRESS SPACE to CHANGE BLENDING MODE", 180, 20, 20, BLACK)
 
-        if (blending == BlendMode.BLEND_ALPHA) then DrawText("ALPHA BLENDING", 290, screenHeight - 40, 20, BLACK)
+        if (blending == BLEND_ALPHA) then DrawText("ALPHA BLENDING", 290, screenHeight - 40, 20, BLACK)
         else DrawText("ADDITIVE BLENDING", 280, screenHeight - 40, 20, RAYWHITE) end
 
     EndDrawing()

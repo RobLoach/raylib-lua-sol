@@ -46,7 +46,7 @@ InitWindow(screenWidth, screenHeight, "raylib [textures] example - image process
 -- NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
 
 local image = LoadImage("resources/parrots.png")   -- Loaded in CPU memory (RAM)
-image = ImageFormat(image, TextureFormat.UNCOMPRESSED_R8G8B8A8)         -- Format image to RGBA 32bit (required for texture update)
+image = ImageFormat(image, UNCOMPRESSED_R8G8B8A8)         -- Format image to RGBA 32bit (required for texture update)
 local texture = LoadTextureFromImage(image)        -- Image converted to texture, GPU memory (VRAM)
 
 local currentProcess = COLOR_NONE
@@ -72,13 +72,13 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
         if (currentProcess < 1) then currentProcess = NUM_PROCESSES end
         textureReload = true
     end
-    
+
     if (textureReload) then
         UnloadImage(image)                         -- Unload current image data
         image = LoadImage("resources/parrots.png") -- Re-load image data
 
-        -- NOTE: Image processing is a costly CPU process to be done every frame, 
-        -- If image processing is required in a frame-basis, it should be done 
+        -- NOTE: Image processing is a costly CPU process to be done every frame,
+        -- If image processing is required in a frame-basis, it should be done
         -- with a texture and by shaders
         if (currentProcess == COLOR_GRAYSCALE) then image = ImageColorGrayscale(image)
         elseif (currentProcess == COLOR_TINT) then image = ImageColorTint(image, GREEN)
@@ -88,7 +88,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
         elseif (currentProcess == FLIP_VERTICAL) then image = ImageFlipVertical(image)
         elseif (currentProcess == FLIP_HORIZONTAL) then image = ImageFlipHorizontal(image)
         end
-        
+
         local pixels = {}
         pixels = GetImageData(image)                -- Get pixel data from image (RGBA 32bit)
         texture = UpdateTexture(texture, pixels)    -- Update texture with new image data
@@ -102,9 +102,9 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     BeginDrawing()
 
         ClearBackground(RAYWHITE)
-        
+
         DrawText("IMAGE PROCESSING:", 40, 30, 10, DARKGRAY)
-        
+
         -- Draw rectangles
         for i = 1, NUM_PROCESSES do
             if (i == currentProcess) then
@@ -120,7 +120,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         DrawTexture(texture, screenWidth - texture.width - 60, screenHeight/2 - texture.height/2, WHITE)
         DrawRectangleLines(screenWidth - texture.width - 60, screenHeight/2 - texture.height/2, texture.width, texture.height, BLACK)
-        
+
     EndDrawing()
     ---------------------------------------------------------------------------------------
 end

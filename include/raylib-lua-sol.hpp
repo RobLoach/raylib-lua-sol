@@ -3,7 +3,6 @@
 
 #include <raylib.h>
 #include <sol/sol.hpp>
-#include <iostream>
 
 void raylib_lua_sol_color(sol::state &lua) {
 	lua.new_usertype<Color>("Color",
