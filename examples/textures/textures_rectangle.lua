@@ -37,19 +37,19 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     -- Update
     ---------------------------------------------------------------------------------------
     framesCounter = framesCounter + 1
-        
+
     if (framesCounter >= (60/framesSpeed)) then
         framesCounter = 0
         currentFrame = currentFrame + 1
-            
+
         if (currentFrame > 5) then currentFrame = 0 end
-            
+
         frameRec.x = currentFrame*scarfy.width/6
     end
-        
-    if (IsKeyPressed(KEY.RIGHT)) then framesSpeed = framesSpeed + 1
-    elseif (IsKeyPressed(KEY.LEFT)) then framesSpeed = framesSpeed - 1 end
-        
+
+    if (IsKeyPressed(KEY_RIGHT)) then framesSpeed = framesSpeed + 1
+    elseif (IsKeyPressed(KEY_LEFT)) then framesSpeed = framesSpeed - 1 end
+
     if (framesSpeed > MAX_FRAME_SPEED) then framesSpeed = MAX_FRAME_SPEED
     elseif (framesSpeed < MIN_FRAME_SPEED) then framesSpeed = MIN_FRAME_SPEED end
     ---------------------------------------------------------------------------------------
@@ -62,18 +62,18 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         DrawTexture(scarfy, 15, 40, WHITE)
         DrawRectangleLines(15, 40, scarfy.width, scarfy.height, LIME)
-        
+
         DrawRectangleLines(15 + frameRec.x, 40 + frameRec.y, frameRec.width, frameRec.height, RED)
-            
+
         DrawText("FRAME SPEED: ", 165, 210, 10, DARKGRAY)
         DrawText(string.format("%02i FPS", framesSpeed), 575, 210, 10, DARKGRAY)
         DrawText("PRESS RIGHT/LEFT KEYS to CHANGE SPEED!", 290, 240, 10, DARKGRAY)
-            
+
         for i = 1, MAX_FRAME_SPEED do
             if (i <= framesSpeed) then DrawRectangle(250 + 21*i, 205, 20, 20, RED) end
             DrawRectangleLines(250 + 21*i, 205, 20, 20, MAROON)
         end
-            
+
         DrawTextureRec(scarfy, frameRec, position, WHITE)   -- Draw part of the texture
 
         DrawText("(c) Scarfy sprite by Eiden Marsal", screenWidth - 200, screenHeight - 20, 10, GRAY)

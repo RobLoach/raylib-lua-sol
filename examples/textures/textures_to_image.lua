@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------------------
 --
---  raylib [textures] example - Retrieve image data from texture: GetTextureData() 
+--  raylib [textures] example - Retrieve image data from texture: GetTextureData()
 --
 --  NOTE: Images are loaded in CPU memory (RAM) textures are loaded in GPU memory (VRAM)
 --
