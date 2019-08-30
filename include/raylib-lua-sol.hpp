@@ -317,7 +317,7 @@ void raylib_lua_sol_structs(sol::state &lua) {
   lua[#x] = x
 
 void raylib_lua_sol_enums(sol::state &lua) {
-  RAYLIB_LUA_SOL_ADD_ENUM(FLAG_SHOW_LOGO);
+  RAYLIB_LUA_SOL_ADD_ENUM(FLAG_RESERVED);
   RAYLIB_LUA_SOL_ADD_ENUM(FLAG_FULLSCREEN_MODE);
   RAYLIB_LUA_SOL_ADD_ENUM(FLAG_WINDOW_RESIZABLE);
   RAYLIB_LUA_SOL_ADD_ENUM(FLAG_WINDOW_UNDECORATED);
@@ -633,10 +633,16 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(EndMode3D);
   RAYLIB_LUA_SOL_ADD_FUNCTION(BeginTextureMode);
   RAYLIB_LUA_SOL_ADD_FUNCTION(EndTextureMode);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(BeginScissorMode);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(EndScissorMode);
 
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMouseRay);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetWorldToScreen);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetCameraMatrix);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetCameraMatrix2D);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetWorldToScreen);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetWorldToScreen2D);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetScreenToWorld2D);
 
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetTargetFPS);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetFPS);
@@ -662,6 +668,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
 
   RAYLIB_LUA_SOL_ADD_FUNCTION(FileExists);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsFileExtension);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(DirectoryExists);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetExtension);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetFileName);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetFileNameWithoutExt);
@@ -761,6 +768,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTriangle);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTriangleLines);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTriangleFan);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTriangleStrip);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawPoly);
 
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetShapesTexture);
@@ -788,12 +796,14 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadRenderTexture);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetImageData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetImageDataNormalized);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetImageAlphaBorder);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetPixelDataSize);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetTextureData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetScreenData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UpdateTexture);
 
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageCopy);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(ImageFromImage);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageToPOT);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageFormat);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageAlphaMask);
@@ -1031,7 +1041,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(InitAudioStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UpdateAudioStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CloseAudioStream);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(IsAudioBufferProcessed);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(IsAudioStreamProcessed);
   RAYLIB_LUA_SOL_ADD_FUNCTION(PlayAudioStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(PauseAudioStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ResumeAudioStream);
