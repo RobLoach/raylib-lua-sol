@@ -108,6 +108,9 @@ void raylib_lua_sol_structs(sol::state &lua) {
     sol::call_constructor, sol::factories(
       [](){
         return Matrix{};
+      },
+      [](float _m0, float _m1, float _m2, float _m3, float _m4, float _m5, float _m6, float _m7, float _m8, float _m9, float _m10, float _m11, float _m12, float _m13, float _m14, float _m15){
+        return Matrix{_m0,_m1,_m2,_m3,_m4,_m5,_m6,_m7,_m8,_m9,_m10,_m11,_m12,_m13,_m14,_m15};
       }
     ),
 		"m0", &Matrix::m0,
@@ -178,13 +181,16 @@ void raylib_lua_sol_structs(sol::state &lua) {
     "texture", &Font::texture,
     "recs", &Font::recs,
     "chars", &Font::chars);
-  lua.new_usertype<Camera3D>("Camera3D",
+  lua.new_usertype<Camera3D>("Camera",
     sol::call_constructor, sol::factories(
       [](){
         return Camera3D{};
       },
       [](Vector3 position, Vector3 target, Vector3 up, float fovy, int type){
         return Camera3D{position, target, up, fovy, type};
+      },
+      [](Vector3 position, Vector3 target, Vector3 up, float fovy){
+        return Camera3D{position, target, up, fovy, 0};
       },
       [](Vector3 position, Vector3 target, Vector3 up){
         return Camera3D{position, target, up, 0, 0};
@@ -267,6 +273,12 @@ void raylib_lua_sol_structs(sol::state &lua) {
     sol::call_constructor, sol::factories(
       [](){
         return Ray{};
+      },
+      [](Vector3 pos){
+        return Ray{pos};
+      },
+      [](Vector3 pos, Vector3 dir){
+        return Ray{pos, dir};
       }
     ),
     "position", &Ray::position,
@@ -277,6 +289,14 @@ void raylib_lua_sol_structs(sol::state &lua) {
     "position", &RayHitInfo::position,
     "normal", &RayHitInfo::normal);
   lua.new_usertype<BoundingBox>("BoundingBox",
+    sol::call_constructor, sol::factories(
+      [](){
+        return BoundingBox{};
+      },
+      [](Vector3 minimum, Vector3 maximum){
+        return BoundingBox{minimum, maximum};
+      }
+    ),
     "min", &BoundingBox::min,
     "max", &BoundingBox::max);
   lua.new_usertype<Wave>("Wave",
@@ -297,7 +317,6 @@ void raylib_lua_sol_structs(sol::state &lua) {
     "ctxType", &Music::ctxType,
     "ctxData", &Music::ctxData,
     "sampleCount", &Music::sampleCount,
-    "sampleLeft", &Music::sampleLeft,
     "loopCount", &Music::loopCount,
     "stream", &Music::stream);
   lua.new_usertype<VrDeviceInfo>("VrDeviceInfo",

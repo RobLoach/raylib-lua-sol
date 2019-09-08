@@ -17,11 +17,9 @@ local screenHeight = 450
 InitWindow(screenWidth, screenHeight, "raylib [core] example - 3d camera free")
 
 -- Define the camera to look into our 3d world
-local camera = Camera(Vector3(10.0, 10.0, 10.0), Vector3(0.0, 0.0, 0.0), Vector3(0.0, 1.0, 0.0), 45.0)
+local camera = Camera.new(Vector3(10.0, 10.0, 10.0), Vector3(), Vector3(0.0, 1.0, 0.0), 45, CAMERA_PERSPECTIVE)
 
-local cubePosition = Vector3(0.0, 0.0, 0.0)
-
-local cubeScreenPosition = Vector2(0, 0)
+local cubePosition = Vector3()
 
 SetCameraMode(camera, CAMERA_FREE)  -- Set a free camera mode
 
@@ -35,7 +33,7 @@ while not WindowShouldClose() do        -- Detect window close button or ESC key
     camera = UpdateCamera(camera)       -- Update camera
 
     -- Calculate cube screen space position (with a little offset to be in top)
-    cubeScreenPosition = GetWorldToScreen(Vector3(cubePosition.x, cubePosition.y + 2.5, cubePosition.z), camera)
+    local cubeScreenPosition = GetWorldToScreen(Vector3(cubePosition.x, cubePosition.y + 2.5, cubePosition.z), camera)
     ------------------------------------------------------------------------------------
 
     -- Draw

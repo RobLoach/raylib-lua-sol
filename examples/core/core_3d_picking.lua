@@ -17,7 +17,7 @@ local screenHeight = 450
 InitWindow(screenWidth, screenHeight, "raylib [core] example - 3d picking")
 
 -- Define the camera to look into our 3d world
-local camera = {}
+local camera = Camera()
 camera.position = Vector3(10.0, 10.0, 10.0)  -- Camera position
 camera.target = Vector3(0.0, 0.0, 0.0)      -- Camera looking at point
 camera.up = Vector3(0.0, 1.0, 0.0)          -- Camera up vector (rotation towards target)
@@ -26,7 +26,7 @@ camera.fovy = 45.0                          -- Camera field-of-view Y
 local cubePosition = Vector3(0.0, 1.0, 0.0)
 local cubeSize = Vector3(2.0, 2.0, 2.0)
 
-local ray = Ray(Vector3(0, 0, 0), Vector3(0, 0, 0)) -- Picking line ray
+local ray = Ray() -- Picking line ray
 
 local collision = false
 
@@ -39,7 +39,7 @@ SetTargetFPS(60)                            -- Set our game to run at 60 frames-
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    camera = UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera)           -- Update camera
 
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) then
         -- NOTE: This function is NOT WORKING properly!
@@ -60,7 +60,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)
+        BeginMode3D(camera)
 
             if (collision) then
                 DrawCube(cubePosition, cubeSize.x, cubeSize.y, cubeSize.z, RED)
@@ -76,7 +76,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
             DrawGrid(10, 1.0)
 
-        End3dMode()
+        EndMode3D()
 
         DrawText("Try selecting the box with mouse!", 240, 10, 20, DARKGRAY)
 

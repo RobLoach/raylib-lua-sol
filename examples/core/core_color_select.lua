@@ -27,7 +27,7 @@ local selected = {}
 
 -- Fills colorsRecs data (for every rectangle)
 for i = 1, NUM_RECTANGLES do
-    colorsRecs[i] = Rectangle(0, 0, 0, 0)
+    colorsRecs[i] = Rectangle()
     colorsRecs[i].x = 20 + 100*((i-1)%7) + 10*((i-1)%7)
     colorsRecs[i].y = 60 + 100*((i-1)//7) + 10*((i-1)//7)   -- Using floor division: //
     colorsRecs[i].width = 100
@@ -35,7 +35,7 @@ for i = 1, NUM_RECTANGLES do
     selected[i] = false
 end
 
-local mousePoint = Vector2(0, 0)
+local mousePoint = Vector2()
 
 SetTargetFPS(60)               -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------

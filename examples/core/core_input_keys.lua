@@ -25,10 +25,10 @@ SetTargetFPS(60)                -- Set target frames-per-second
 while not WindowShouldClose() do                -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    if (IsKeyDown(KEY.RIGHT)) then ballPosition.x = ballPosition.x + 0.8 end
-    if (IsKeyDown(KEY.LEFT)) then ballPosition.x = ballPosition.x - 0.8 end
-    if (IsKeyDown(KEY.UP)) then ballPosition.y = ballPosition.y - 0.8 end
-    if (IsKeyDown(KEY.DOWN)) then ballPosition.y = ballPosition.y + 0.8 end
+    if (IsKeyDown(KEY_RIGHT)) then ballPosition.x = ballPosition.x + 0.8 end
+    if (IsKeyDown(KEY_LEFT)) then ballPosition.x = ballPosition.x - 0.8 end
+    if (IsKeyDown(KEY_UP)) then ballPosition.y = ballPosition.y - 0.8 end
+    if (IsKeyDown(KEY_DOWN)) then ballPosition.y = ballPosition.y + 0.8 end
     ---------------------------------------------------------------------------------------
 
     -- Draw
