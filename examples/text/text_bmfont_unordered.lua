@@ -21,7 +21,7 @@ InitWindow(screenWidth, screenHeight, "raylib [text] example - bmfont unordered 
 local msg = "ASCII extended characters:\n¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆ\nÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæ\nçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
 
 -- NOTE: Loaded font has an unordered list of characters (chars in the range 32..255)
-local font = LoadSpriteFont("resources/pixantiqua.fnt")       -- BMFont (AngelCode)
+local font = LoadFont("resources/pixantiqua.fnt")       -- BMFont (AngelCode)
 
 SetTargetFPS(60)
 -------------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
         DrawText("Font name:       PixAntiqua", 40, 50, 20, GRAY)
         DrawText(string.format("Font base size:           %i", font.baseSize), 40, 80, 20, GRAY)
         DrawText(string.format("Font chars number:     %i", font.charsCount), 40, 110, 20, GRAY)
-        
+
         DrawTextEx(font, msg, Vector2(40, 180), font.baseSize, 0, MAROON)
 
     EndDrawing()

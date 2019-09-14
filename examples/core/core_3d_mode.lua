@@ -41,14 +41,14 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)    -- ERROR: Lua Error: attempt to index a number value (?)
+        BeginMode3D(camera)    -- ERROR: Lua Error: attempt to index a number value (?)
 
             DrawCube(cubePosition, 2.0, 2.0, 2.0, RED)
             DrawCubeWires(cubePosition, 2.0, 2.0, 2.0, MAROON)
 
             DrawGrid(10, 1.0)
 
-        End3dMode()
+        EndMode3D()
 
         DrawText("Welcome to the third dimension!", 10, 40, 20, DARKGRAY)
 

@@ -48,7 +48,7 @@
 #include <string>
 
 #include "raylib.h"
-#include "../include/raylib-lua-sol.hpp"
+#include "raylib-lua-sol.hpp"
 
 int main(int argc, char *argv[])
 {

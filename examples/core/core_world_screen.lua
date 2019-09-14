@@ -17,7 +17,7 @@ local screenHeight = 450
 InitWindow(screenWidth, screenHeight, "raylib [core] example - 3d camera free")
 
 -- Define the camera to look into our 3d world
-local camera = Camera.new(Vector3(10.0, 10.0, 10.0), Vector3(), Vector3(0.0, 1.0, 0.0), 45, CAMERA_PERSPECTIVE)
+local camera = Camera(Vector3(10.0, 10.0, 10.0), Vector3(), Vector3(0.0, 1.0, 0.0), 45, CAMERA_PERSPECTIVE)
 
 local cubePosition = Vector3()
 
@@ -30,7 +30,7 @@ SetTargetFPS(60)                        -- Set our game to run at 60 frames-per-
 while not WindowShouldClose() do        -- Detect window close button or ESC key
     -- Update
     ------------------------------------------------------------------------------------
-    camera = UpdateCamera(camera)       -- Update camera
+    UpdateCamera(camera)       -- Update camera
 
     -- Calculate cube screen space position (with a little offset to be in top)
     local cubeScreenPosition = GetWorldToScreen(Vector3(cubePosition.x, cubePosition.y + 2.5, cubePosition.z), camera)
@@ -42,14 +42,14 @@ while not WindowShouldClose() do        -- Detect window close button or ESC key
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)
+        BeginMode3D(camera)
 
             DrawCube(cubePosition, 2.0, 2.0, 2.0, RED)
             DrawCubeWires(cubePosition, 2.0, 2.0, 2.0, MAROON)
 
             DrawGrid(10, 1.0)
 
-        End3dMode()
+        EndMode3D()
 
         DrawText("Enemy: 100 / 100", cubeScreenPosition.x//1 - MeasureText("Enemy: 100 / 100", 20)//2, cubeScreenPosition.y//1, 20, BLACK)
         DrawText("Text is always on top of the cube", (screenWidth - MeasureText("Text is always on top of the cube", 20))//2, 25, 20, GRAY)

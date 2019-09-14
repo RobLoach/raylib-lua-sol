@@ -40,7 +40,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)
+        BeginMode3D(camera)
 
             DrawModel(dwarf, position, 2.0, WHITE)   -- Draw 3d model with texture
 
@@ -48,8 +48,8 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
             DrawGizmo(position)        -- Draw gizmo
 
-        End3dMode()
-        
+        EndMode3D()
+
         DrawText("(c) Dwarf 3D model by David Moreno", screenWidth - 200, screenHeight - 20, 10, GRAY)
 
         DrawFPS(10, 10)

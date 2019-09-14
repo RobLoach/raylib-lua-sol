@@ -72,7 +72,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
             end
         end
     elseif (state == 4) then                -- State 4: Reset and Replay
-        if (IsKeyPressed(KEY.R)) then
+        if (IsKeyPressed(KEY_R)) then
             framesCounter = 0
             lettersCount = 0
 

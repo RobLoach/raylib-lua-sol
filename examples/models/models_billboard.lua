@@ -31,7 +31,7 @@ SetTargetFPS(60)                            -- Set our game to run at 60 frames-
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    camera = UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera)           -- Update camera
     ---------------------------------------------------------------------------------------
 
     -- Draw
@@ -40,13 +40,13 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)
+        BeginMode3D(camera)
 
             DrawBillboard(camera, bill, billPosition, 2.0, WHITE)
 
             DrawGrid(10, 1.0)        -- Draw a grid
 
-        End3dMode()
+        EndMode3D()
 
         DrawFPS(10, 10)
 

@@ -633,6 +633,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMonitorHeight);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMonitorPhysicalWidth);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMonitorPhysicalHeight);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetWindowPosition);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMonitorName);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetClipboardText);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetClipboardText);
@@ -700,6 +701,9 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetDroppedFiles);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ClearDroppedFiles);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetFileModTime);
+
+  RAYLIB_LUA_SOL_ADD_FUNCTION(CompressData);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(DecompressData);
 
   RAYLIB_LUA_SOL_ADD_FUNCTION(StorageSaveValue);
   RAYLIB_LUA_SOL_ADD_FUNCTION(StorageLoadValue);

@@ -64,7 +64,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     -- Send new value to the shader to be used on drawing
     SetShaderValue(shader, swirlCenterLoc, swirlCenter)
 
-    camera = UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera)           -- Update camera
     ---------------------------------------------------------------------------------------
 
     -- Draw
@@ -75,13 +75,13 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         BeginTextureMode(target)            -- Enable drawing to texture
 
-            Begin3dMode(camera)
+            BeginMode3D(camera)
 
                 DrawModel(dwarf, position, 2.0, WHITE)   -- Draw 3d model with texture
 
                 DrawGrid(10, 1.0)           -- Draw a grid
 
-            End3dMode()
+            EndMode3D()
 
             DrawText("TEXT DRAWN IN RENDER TEXTURE", 200, 10, 30, RED)
 

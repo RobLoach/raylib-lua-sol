@@ -28,8 +28,8 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     -- Update
     ---------------------------------------------------------------------------------------
     framesCounter = framesCounter + 1
-    
-    if (IsKeyPressed(KEY.ENTER)) then framesCounter = 0 end
+
+    if (IsKeyPressed(KEY_ENTER)) then framesCounter = 0 end
     ---------------------------------------------------------------------------------------
 
     -- Draw
@@ -39,7 +39,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
         ClearBackground(RAYWHITE)
 
         DrawText(string.sub(message, 0, framesCounter//10), 210, 160, 20, MAROON)
-        
+
         DrawText("PRESS [ENTER] to RESTART!", 240, 280, 20, LIGHTGRAY)
 
     EndDrawing()
@@ -47,6 +47,6 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 end
 
 -- De-Initialization
--------------------------------------------------------------------------------------------   
+-------------------------------------------------------------------------------------------
 CloseWindow()        -- Close window and OpenGL context
 -------------------------------------------------------------------------------------------

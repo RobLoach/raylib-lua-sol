@@ -63,11 +63,11 @@ SetTargetFPS(60)
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    if (IsKeyPressed(KEY.DOWN)) then
+    if (IsKeyPressed(KEY_DOWN)) then
         currentProcess = currentProcess + 1
         if (currentProcess > NUM_PROCESSES) then currentProcess = 1 end
         textureReload = true
-    elseif (IsKeyPressed(KEY.UP)) then
+    elseif (IsKeyPressed(KEY_UP)) then
         currentProcess = currentProcess - 1
         if (currentProcess < 1) then currentProcess = NUM_PROCESSES end
         textureReload = true

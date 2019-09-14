@@ -34,15 +34,24 @@ A [`raylib-lua-sol`](bin/raylib-lua-sol.cpp) CLI launcher is provided. This laun
 
 Note that launcher can also be compiled for other platforms, just need to link with Lua, raylib and sol libraries. For more details, just check comments on sources.
 
+``` bash
+bin/raylib-lua-sol examples/core_basic_window.lua
+```
+
 ## Build
 
-```
+``` bash
 git clone https://github.com/RobLoach/raylib-lua-sol.git
 cd raylib-lua-sol
 mkdir build
 cd build
 cmake ..
 make
+```
+
+## Development
+
+``` bash
 make test
 ```
 

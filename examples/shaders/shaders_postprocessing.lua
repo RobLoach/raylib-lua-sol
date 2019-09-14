@@ -100,10 +100,10 @@ SetTargetFPS(60)                            -- Set our game to run at 60 frames-
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    camera = UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera)           -- Update camera
 
-    if (IsKeyPressed(KEY.RIGHT)) then currentShader = currentShader + 1
-    elseif (IsKeyPressed(KEY.LEFT)) then currentShader = currentShader - 1 end
+    if (IsKeyPressed(KEY_RIGHT)) then currentShader = currentShader + 1
+    elseif (IsKeyPressed(KEY_LEFT)) then currentShader = currentShader - 1 end
 
     if (currentShader > MAX_POSTPRO_SHADERS) then currentShader = 1
     elseif (currentShader < 1) then currentShader = MAX_POSTPRO_SHADERS end
@@ -117,13 +117,13 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         BeginTextureMode(target)       -- Enable drawing to texture
 
-            Begin3dMode(camera)
+            BeginMode3D(camera)
 
                 DrawModel(dwarf, position, 2.0, WHITE)   -- Draw 3d model with texture
 
                 DrawGrid(10, 1.0)      -- Draw a grid
 
-            End3dMode()
+            EndMode3D()
 
         EndTextureMode()           -- End drawing to texture (now we have a texture available for next passes)
 

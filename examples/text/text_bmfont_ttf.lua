@@ -20,8 +20,8 @@ local msgBm = "THIS IS AN AngelCode SPRITE FONT"
 local msgTtf = "THIS FONT has been GENERATED from TTF"
 
 -- NOTE: Textures/Fonts MUST be loaded after Window initialization (OpenGL context is required)
-local fontBm = LoadSpriteFont("resources/bmfont.fnt")       -- BMFont (AngelCode)
-local fontTtf = LoadSpriteFont("resources/pixantiqua.ttf")  -- TTF font
+local fontBm = LoadFont("resources/bmfont.fnt")       -- BMFont (AngelCode)
+local fontTtf = LoadFont("resources/pixantiqua.ttf")  -- TTF font
 
 local fontPosition = Vector2(0, 0)
 fontPosition.x = screenWidth/2 - MeasureTextEx(fontBm, msgBm, fontBm.baseSize, 0).x/2

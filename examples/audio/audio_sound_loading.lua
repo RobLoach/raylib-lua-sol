@@ -30,8 +30,8 @@ SetTargetFPS(60)
 while not WindowShouldClose() do    -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    if (IsKeyPressed(KEY.SPACE)) then PlaySound(fxWav) end      -- Play WAV sound
-    if (IsKeyPressed(KEY.ENTER)) then PlaySound(fxOgg) end      -- Play OGG sound
+    if (IsKeyPressed(KEY_SPACE)) then PlaySound(fxWav) end      -- Play WAV sound
+    if (IsKeyPressed(KEY_ENTER)) then PlaySound(fxOgg) end      -- Play OGG sound
     ---------------------------------------------------------------------------------------
 
     -- Draw

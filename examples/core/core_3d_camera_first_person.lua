@@ -43,7 +43,7 @@ SetTargetFPS(60)                                    -- Set our game to run at 60
 while not WindowShouldClose() do                    -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    camera = UpdateCamera(camera)                   -- Update camera
+    UpdateCamera(camera)                   -- Update camera
     ---------------------------------------------------------------------------------------
 
     -- Draw
@@ -52,7 +52,7 @@ while not WindowShouldClose() do                    -- Detect window close butto
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)
+        BeginMode3D(camera)
 
             DrawPlane(Vector3(0.0, 0.0, 0.0), Vector2(32.0, 32.0), LIGHTGRAY) -- Draw ground
             DrawCube(Vector3(-16.0, 2.5, 0.0), 1.0, 5.0, 32.0, BLUE)     -- Draw a blue wall
@@ -65,7 +65,7 @@ while not WindowShouldClose() do                    -- Detect window close butto
                 DrawCubeWires(positions[i], 2.0, heights[i], 2.0, MAROON)
             end
 
-        End3dMode()
+        EndMode3D()
 
         DrawRectangle( 10, 10, 220, 70, Fade(SKYBLUE, 0.5))
         DrawRectangleLines( 10, 10, 220, 70, BLUE)

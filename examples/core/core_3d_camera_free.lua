@@ -17,7 +17,7 @@ local screenHeight = 450
 InitWindow(screenWidth, screenHeight, "raylib [core] example - 3d camera free")
 
 -- Define the camera to look into our 3d world
-local camera = {}
+local camera = Camera()
 camera.position = Vector3(10.0, 10.0, 10.0)  -- Camera position
 camera.target = Vector3(0.0, 0.0, 0.0)      -- Camera looking at point
 camera.up = Vector3(0.0, 1.0, 0.0)          -- Camera up vector (rotation towards target)
@@ -34,7 +34,7 @@ SetTargetFPS(60)                            -- Set our game to run at 60 frames-
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    camera = UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera)           -- Update camera
     ---------------------------------------------------------------------------------------
 
     -- Draw
@@ -43,14 +43,14 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)
+        BeginMode3D(camera)
 
             DrawCube(cubePosition, 2.0, 2.0, 2.0, RED)
             DrawCubeWires(cubePosition, 2.0, 2.0, 2.0, MAROON)
 
             DrawGrid(10, 1.0)
 
-        End3dMode()
+        EndMode3D()
 
         DrawRectangle( 10, 10, 320, 133, Fade(SKYBLUE, 0.5))
         DrawRectangleLines( 10, 10, 320, 133, BLUE)

@@ -21,7 +21,7 @@ local msg = "TTF SpriteFont"
 -- NOTE: Textures/Fonts MUST be loaded after Window initialization (OpenGL context is required)
 
 -- TTF SpriteFont loading with custom generation parameters
-local font = LoadSpriteFontEx("resources/KAISG.ttf", 96, 0, 0)
+local font = LoadFontEx("resources/KAISG.ttf", 96, 0, 0)
 
 -- Generate mipmap levels to use trilinear filtering
 -- NOTE: On 2D drawing it won't be noticeable, it looks like FILTER_BILINEAR
@@ -47,13 +47,13 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     fontSize = fontSize + GetMouseWheelMove()*4.0
 
     -- Choose font texture filter method
-    if (IsKeyPressed(KEY.ONE)) then
+    if (IsKeyPressed(KEY_ONE)) then
         SetTextureFilter(font.texture, FILTER_POINT)
         currentFontFilter = 0
-    elseif (IsKeyPressed(KEY.TWO)) then
+    elseif (IsKeyPressed(KEY_TWO)) then
         SetTextureFilter(font.texture, FILTER_BILINEAR)
         currentFontFilter = 1
-    elseif (IsKeyPressed(KEY.THREE)) then
+    elseif (IsKeyPressed(KEY_THREE)) then
         -- NOTE: Trilinear filter won't be noticed on 2D drawing
         SetTextureFilter(font.texture, FILTER_TRILINEAR)
         currentFontFilter = 2
@@ -61,8 +61,8 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
     textSize = MeasureTextEx(font, msg, fontSize, 0)
 
-    if (IsKeyDown(KEY.LEFT)) then fontPosition.x = fontPosition.x - 10
-    elseif (IsKeyDown(KEY.RIGHT)) then fontPosition.x = fontPosition.x + 10
+    if (IsKeyDown(KEY_LEFT)) then fontPosition.x = fontPosition.x - 10
+    elseif (IsKeyDown(KEY_RIGHT)) then fontPosition.x = fontPosition.x + 10
     end
 
     -- Load a dropped TTF file dynamically (at current fontSize)
@@ -72,7 +72,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         if (count == 1) then -- Only support one ttf file dropped
             UnloadSpriteFont(font)
-            font = LoadSpriteFontTTF(droppedFiles[1], fontSize, 0, 0)
+            font = LoadFontTTF(droppedFiles[1], fontSize, 0, 0)
             ClearDroppedFiles()
         end
     end

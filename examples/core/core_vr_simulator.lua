@@ -41,9 +41,9 @@ SetTargetFPS(90)                    -- Set our game to run at 90 frames-per-seco
 while not WindowShouldClose() do    -- Detect window close button or ESC key
     -- Update
     ------------------------------------------------------------------------------------
-    camera = UpdateCamera(camera);          -- Update camera (simulator mode)
-   
-    if (IsKeyPressed(KEY.SPACE)) then ToggleVrMode() end   -- Toggle VR mode
+    UpdateCamera(camera);          -- Update camera (simulator mode)
+
+    if (IsKeyPressed(KEY_SPACE)) then ToggleVrMode() end   -- Toggle VR mode
     ------------------------------------------------------------------------------------
 
     -- Draw
@@ -53,16 +53,16 @@ while not WindowShouldClose() do    -- Detect window close button or ESC key
         ClearBackground(RAYWHITE)
 
         BeginVrDrawing();
-        
-            Begin3dMode(camera)
+
+            BeginMode3D(camera)
 
                 DrawCube(cubePosition, 2.0, 2.0, 2.0, RED)
                 DrawCubeWires(cubePosition, 2.0, 2.0, 2.0, MAROON)
 
                 DrawGrid(40, 1.0)
 
-            End3dMode()
-        
+            EndMode3D()
+
         EndVrDrawing();
 
         DrawFPS(10, 10)

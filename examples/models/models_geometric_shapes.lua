@@ -35,7 +35,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)  -- ERROR: Lua Error: attempt to index a number value
+        BeginMode3D(camera)  -- ERROR: Lua Error: attempt to index a number value
 
             DrawCube(Vector3(-4.0, 0.0, 2.0), 2.0, 5.0, 2.0, RED)
             DrawCubeWires(Vector3(-4.0, 0.0, 2.0), 2.0, 5.0, 2.0, GOLD)
@@ -53,7 +53,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
             DrawGrid(10, 1.0)        -- Draw a grid
 
-        End3dMode()
+        EndMode3D()
 
         DrawFPS(10, 10)
 

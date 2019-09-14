@@ -32,7 +32,7 @@ local hitMeshBBox = false
 local hitTriangle = false
 
 -- Test triangle
-local ta = Vector3(-25.0, 0.5, 0.0)    
+local ta = Vector3(-25.0, 0.5, 0.0)
 local tb = Vector3(-4.0, 2.5, 1.0)
 local tc = Vector3(-8.0, 6.5, 0.0)
 
@@ -47,8 +47,8 @@ SetTargetFPS(60)        -- Set our game to run at 60 frames-per-second
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    camera = UpdateCamera(camera)           -- Update camera
-        
+    UpdateCamera(camera)           -- Update camera
+
     -- Display information about closest hit
     local nearestHit = RayHitInfo()
     local hitObjectName = "None"
@@ -58,10 +58,10 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
     -- Get ray and test against ground, triangle, and mesh
     ray = GetMouseRay(GetMousePosition(), camera)
-    
+
     -- Check ray collision aginst ground plane
     local groundHitInfo = GetCollisionRayGround(ray, 0.0)
-    
+
     if ((groundHitInfo.hit) and (groundHitInfo.distance < nearestHit.distance)) then
         nearestHit = groundHitInfo
         cursorColor = GREEN
@@ -70,7 +70,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
     -- Check ray collision against test triangle
     local triHitInfo = GetCollisionRayTriangle(ray, ta, tb, tc)
-    
+
     if ((triHitInfo.hit) and (triHitInfo.distance < nearestHit.distance)) then
         nearestHit = triHitInfo
         cursorColor = PURPLE
@@ -78,7 +78,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         bary = VectorBarycenter(nearestHit.hitPosition, ta, tb, tc)
         hitTriangle = true
-    else 
+    else
         hitTriangle = false
     end
 
@@ -87,19 +87,19 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     -- Check ray collision against bounding box first, before trying the full ray-mesh test
     if (CheckCollisionRayBox(ray, towerBBox)) then
         hitMeshBBox = true
-        
+
         -- Check ray collision against mesh
-        meshHitInfo = GetCollisionRayMesh(ray, tower.mesh)    
-        
+        meshHitInfo = GetCollisionRayMesh(ray, tower.mesh)
+
         if ((meshHitInfo.hit) and (meshHitInfo.distance < nearestHit.distance)) then
             nearestHit = meshHitInfo
             cursorColor = ORANGE
             hitObjectName = "Mesh"
         end
-        
+
     end
-    
-    hitMeshBBox = false 
+
+    hitMeshBBox = false
     ---------------------------------------------------------------------------------------
 
     -- Draw
@@ -108,11 +108,11 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)
+        BeginMode3D(camera)
 
             -- Draw the tower
             DrawModel(tower, towerPos, 1.0, WHITE)
-            
+
             -- Draw the test triangle
             DrawLine3D(ta, tb, PURPLE)
             DrawLine3D(tb, tc, PURPLE)
@@ -130,16 +130,16 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
                 normalEnd.x = nearestHit.hitPosition.x + nearestHit.hitNormal.x
                 normalEnd.y = nearestHit.hitPosition.y + nearestHit.hitNormal.y
                 normalEnd.z = nearestHit.hitPosition.z + nearestHit.hitNormal.z
-                
+
                 DrawLine3D(nearestHit.hitPosition, normalEnd, YELLOW)
             end
 
             DrawRay(ray, MAROON)
-            
+
             DrawGrid(100, 1.0)
 
-        End3dMode()
-        
+        EndMode3D()
+
         -- Draw some debug GUI text
         DrawText(string.format("Hit Object: %s", hitObjectName), 10, 50, 10, BLACK)
 
@@ -147,13 +147,13 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
             local ypos = 70
 
             DrawText(string.format("Distance: %3.2f", nearestHit.distance), 10, ypos, 10, BLACK)
-            DrawText(string.format("Hit Pos: %3.2f %3.2f %3.2f", 
-                                nearestHit.hitPosition.x, 
-                                nearestHit.hitPosition.y, 
+            DrawText(string.format("Hit Pos: %3.2f %3.2f %3.2f",
+                                nearestHit.hitPosition.x,
+                                nearestHit.hitPosition.y,
                                 nearestHit.hitPosition.z), 10, ypos + 15, 10, BLACK)
-            DrawText(string.format("Hit Norm: %3.2f %3.2f %3.2f", 
-                                nearestHit.hitNormal.x, 
-                                nearestHit.hitNormal.y, 
+            DrawText(string.format("Hit Norm: %3.2f %3.2f %3.2f",
+                                nearestHit.hitNormal.x,
+                                nearestHit.hitNormal.y,
                                 nearestHit.hitNormal.z), 10, ypos + 30, 10, BLACK)
 
             if (hitTriangle) then DrawText(string.format("Barycenter: %3.2f %3.2f %3.2f",  bary.x, bary.y, bary.z), 10, ypos + 45, 10, BLACK) end

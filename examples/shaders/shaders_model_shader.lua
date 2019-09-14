@@ -48,7 +48,7 @@ SetTargetFPS(60)                          -- Set our game to run at 60 frames-pe
 while not WindowShouldClose() do          -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    camera = UpdateCamera(camera)         -- Update camera
+    UpdateCamera(camera)         -- Update camera
     ---------------------------------------------------------------------------------------
 
     -- Draw
@@ -57,13 +57,13 @@ while not WindowShouldClose() do          -- Detect window close button or ESC k
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)
+        BeginMode3D(camera)
 
             DrawModel(dwarf, position, 2.0, WHITE)   -- Draw 3d model with texture
 
             DrawGrid(10, 1.0)     -- Draw a grid
 
-        End3dMode()
+        EndMode3D()
 
         DrawText("(c) Dwarf 3D model by David Moreno", screenWidth - 200, screenHeight - 20, 10, GRAY)
 

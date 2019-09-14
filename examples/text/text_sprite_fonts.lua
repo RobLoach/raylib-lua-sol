@@ -21,9 +21,9 @@ local msg2 = "...and this is ANOTHER CUSTOM font..."
 local msg3 = "...and a THIRD one! GREAT! :D"
 
 -- NOTE: Textures/Fonts MUST be loaded after Window initialization (OpenGL context is required)
-local font1 = LoadSpriteFont("resources/custom_mecha.png")          -- SpriteFont loading
-local font2 = LoadSpriteFont("resources/custom_alagard.png")        -- SpriteFont loading
-local font3 = LoadSpriteFont("resources/custom_jupiter_crash.png")  -- SpriteFont loading
+local font1 = LoadFont("resources/custom_mecha.png")          -- SpriteFont loading
+local font2 = LoadFont("resources/custom_alagard.png")        -- SpriteFont loading
+local font3 = LoadFont("resources/custom_jupiter_crash.png")  -- SpriteFont loading
 
 local fontPosition1 = Vector2(0, 0)
 local fontPosition2 = Vector2(0, 0)

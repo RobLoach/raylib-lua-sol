@@ -40,7 +40,7 @@ SetTargetFPS(60)                            -- Set our game to run at 60 frames-
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    camera = UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera)           -- Update camera
     ---------------------------------------------------------------------------------------
 
     -- Draw
@@ -49,11 +49,11 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         ClearBackground(RAYWHITE)
 
-        Begin3dMode(camera)
+        BeginMode3D(camera)
 
             DrawModel(map, mapPosition, 1.0, WHITE)
 
-        End3dMode()
+        EndMode3D()
 
         DrawTextureEx(cubicmap, (Vector2)(screenWidth - cubicmap.width*4 - 20, 20), 0.0, 4.0, WHITE)
         DrawRectangleLines(screenWidth - cubicmap.width*4 - 20, 20, cubicmap.width*4, cubicmap.height*4, GREEN)

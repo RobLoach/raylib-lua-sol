@@ -32,7 +32,7 @@ for i = 1, MAX_BUILDINGS do
     buildings[i].x = -6000 + spacing
 
     spacing = spacing + buildings[i].width
-    
+
     buildColors[i] = Color(GetRandomValue(200, 240), GetRandomValue(200, 240), GetRandomValue(200, 250), 255)
 end
 
@@ -50,22 +50,22 @@ SetTargetFPS(60)
 while not WindowShouldClose() do                -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    if (IsKeyDown(KEY.RIGHT)) then
+    if (IsKeyDown(KEY_RIGHT)) then
         player.x = player.x + 2                 -- Player movement
         camera.offset.x = camera.offset.x - 2   -- Camera displacement with player movement
-    elseif (IsKeyDown(KEY.LEFT)) then
+    elseif (IsKeyDown(KEY_LEFT)) then
         player.x = player.x - 2                 -- Player movement
         camera.offset.x = camera.offset.x + 2   -- Camera displacement with player movement
     end
-    
+
     -- Camera target follows player
     camera.target = Vector2(player.x + 20, player.y + 20)
-    
+
     -- Camera rotation controls
-    if (IsKeyDown(KEY.A)) then camera.rotation = camera.rotation - 1
-    elseif (IsKeyDown(KEY.S)) then camera.rotation = camera.rotation + 1
+    if (IsKeyDown(KEY_A)) then camera.rotation = camera.rotation - 1
+    elseif (IsKeyDown(KEY_S)) then camera.rotation = camera.rotation + 1
     end
-    
+
     -- Limit camera rotation to 80 degrees (-40 to 40)
     if (camera.rotation > 40) then camera.rotation = 40
     elseif (camera.rotation < -40) then camera.rotation = -40
@@ -73,13 +73,13 @@ while not WindowShouldClose() do                -- Detect window close button or
 
     -- Camera zoom controls
     camera.zoom = camera.zoom + (GetMouseWheelMove()*0.05)
-    
+
     if (camera.zoom > 3.0) then camera.zoom = 3.0
     elseif (camera.zoom < 0.1) then camera.zoom = 0.1
     end
-    
+
     -- Camera reset (zoom and rotation)
-    if (IsKeyPressed(KEY.R)) then
+    if (IsKeyPressed(KEY_R)) then
         camera.zoom = 1.0
         camera.rotation = 0.0
     end
@@ -94,14 +94,14 @@ while not WindowShouldClose() do                -- Detect window close button or
         Begin2dMode(camera)
 
             DrawRectangle(-6000, 320, 13000, 8000, DARKGRAY)
-            
+
             for i = 1, MAX_BUILDINGS, 1 do DrawRectangleRec(buildings[i], buildColors[i]) end
-            
+
             DrawRectangleRec(player, RED)
 
             DrawRectangle(camera.target.x, -500, 1, screenHeight*4, GREEN)
             DrawRectangle(-500, camera.target.y, screenWidth*4, 1, GREEN)
-            
+
         End2dMode()
 
         DrawText("SCREEN AREA", 640, 10, 20, RED)
