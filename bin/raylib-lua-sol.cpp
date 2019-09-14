@@ -91,9 +91,14 @@ int main(int argc, char *argv[])
     raylib_lua_sol(lua);
 
     // Execute the script.
-    // TODO: Error detection
     // TODO: Use JIT compiler
-    lua.script_file(fileToLoad);
+    try {
+      lua.script_file(fileToLoad);
+    }
+    catch (const std::exception& e) {
+      std::cout << e.what() << std::endl;
+      return 1;
+    }
 
     return 0;
 }
