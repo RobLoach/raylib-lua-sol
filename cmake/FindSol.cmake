@@ -4,7 +4,7 @@ if (NOT sol_FOUND)
   FetchContent_Declare(
     sol
     GIT_REPOSITORY https://github.com/ThePhD/sol2.git
-    GIT_TAG 6d4a5d3ef66d605c54093edb673c14e373969a08
+    GIT_TAG 21c030933f0c470ca328cdec51d847968370cd23
   )
   FetchContent_GetProperties(sol)
   if (NOT sol_POPULATED) # Have we downloaded sol2 yet?
