@@ -4,7 +4,7 @@ find_package(Lua 5.3 REQUIRED)
 
 add_executable(raylib-lua-sol raylib-lua-sol.cpp)
 
-target_compile_definitions(raylib-lua-sol PUBLIC -DLUA)
+target_compile_definitions(raylib-lua-sol PUBLIC -DLUA -DPHYSAC_NO_THREADS)
 
 set_target_properties(raylib-lua-sol PROPERTIES
   CXX_STANDARD 17
