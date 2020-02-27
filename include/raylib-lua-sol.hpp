@@ -686,6 +686,8 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(TakeScreenshot);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetRandomValue);
 
+  RAYLIB_LUA_SOL_ADD_FUNCTION(LoadFileData);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(SaveFileData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(FileExists);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsFileExtension);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DirectoryExists);
@@ -705,8 +707,8 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(CompressData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DecompressData);
 
-  RAYLIB_LUA_SOL_ADD_FUNCTION(StorageSaveValue);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(StorageLoadValue);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(LoadStorageValue);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(SaveStorageValue);
 
   RAYLIB_LUA_SOL_ADD_FUNCTION(OpenURL);
 
@@ -900,7 +902,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
 
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextIsEqual);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextLength);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(TextCountCodepoints);
   // TODO: Add TextFormat
   //RAYLIB_LUA_SOL_ADD_FUNCTION(TextFormat);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextSubtext);
@@ -914,8 +915,16 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextToLower);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextToPascal);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextToInteger);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(TextToUtf8);
+
+  // UTF8 text strings management functions
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetCodepoints);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetCodepointsCount);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetNextCodepoint);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(CodepointToUtf8);
 
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawLine3D);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(DrawPoint3D);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawCircle3D);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawCube);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawCubeV);
@@ -932,20 +941,24 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawGrid);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawGizmo);
 
+  // Model loading/unloading functions
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadModel);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadModelFromMesh);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadModel);
 
+  // Mesh loading/unloading functions
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadMeshes);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ExportMesh);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadMesh);
 
+  // Material loading/unloading functions
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadMaterials);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadMaterialDefault);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadMaterial);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetMaterialTexture);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetModelMeshMaterial);
 
+  // Model animations loading/unloading functions
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadModelAnimations);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UpdateModelAnimation);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadModelAnimation);
