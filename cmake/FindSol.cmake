@@ -1,4 +1,4 @@
-find_package(sol 3.0 QUIET)
+find_package(sol 3.0)
 if (NOT sol_FOUND)
   include(FetchContent)
   FetchContent_Declare(
