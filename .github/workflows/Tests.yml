@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Install Dependencies
-      run: sudo apt-get install xorg-dev libglu1-mesa-dev lua5.3
+      run: sudo apt-get install xorg-dev libglu1-mesa-dev lua5.3 liblua5.3-dev
 
     - name: Configure
       run: cmake -B build .
