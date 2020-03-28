@@ -261,14 +261,11 @@ void raylib_lua_sol_structs(sol::state &lua) {
     "boneCount", &Model::boneCount,
     "bones", &Model::bones,
     "bindPose", &Model::bindPose);
-  /*
-  // TODO: Add Model Animation wrapper.
   lua.new_usertype<ModelAnimation>("ModelAnimation",
     "boneCount", &ModelAnimation::boneCount,
     "bones", &ModelAnimation::bones,
-    "frameCount", &ModelAnimation::frameCount,
-    "framePoses", &ModelAnimation::framePoses);
-  */
+    "frameCount", &ModelAnimation::frameCount);
+    //"framePoses", &ModelAnimation::framePoses
   lua.new_usertype<Ray>("Ray",
     sol::call_constructor, sol::factories(
       [](){
