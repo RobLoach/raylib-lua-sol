@@ -13,6 +13,7 @@
 -------------------------------------------------------------------------------------------
 local screenWidth = 800
 local screenHeight = 450
+local luaColor = Color(0, 0, 124)
 
 InitWindow(screenWidth, screenHeight, "raylib [shapes] example - raylib logo using shapes")
 
@@ -32,9 +33,10 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         ClearBackground(RAYWHITE)
 
-        DrawRectangle(screenWidth/2 - 128, screenHeight/2 - 128, 256, 256, BLACK)
+        DrawRectangle(screenWidth/2 - 128, screenHeight/2 - 128, 256, 256, luaColor)
         DrawRectangle(screenWidth/2 - 112, screenHeight/2 - 112, 224, 224, RAYWHITE)
-        DrawText("raylib", screenWidth/2 - 44, screenHeight/2 + 48, 50, BLACK)
+        DrawText("raylib", screenWidth/2 - 44, screenHeight/2 + 48, 50, luaColor)
+        DrawText("lua", screenWidth/2 - 29, screenHeight/2 + 18, 50, luaColor)
 
         DrawText("this is NOT a texture!", 350, 370, 10, GRAY)
 

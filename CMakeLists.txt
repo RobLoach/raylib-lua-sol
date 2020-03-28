@@ -7,13 +7,26 @@ project (raylib-lua-sol
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
+option(BUILD_BIN "Binary" ON)
+option(BUILD_EXAMPLES "Examples" ON)
+option(BUILD_LIBRARY "Library" ON)
+
 include_directories(include)
 
-add_subdirectory(bin)
-add_subdirectory(examples)
+if (BUILD_BIN)
+  add_subdirectory(bin)
+endif()
+
+if (BUILD_EXAMPLES)
+  add_subdirectory(examples)
+endif()
+
+if (BUILD_LIB)
+  add_subdirectory(lib)
+endif()
 
 include(CTest)
 enable_testing()
 if(BUILD_TESTING)
-	add_subdirectory(tests)
+  add_subdirectory(tests)
 endif()

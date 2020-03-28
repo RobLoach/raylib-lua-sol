@@ -616,6 +616,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsWindowMinimized);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsWindowResized);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsWindowHidden);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(IsWindowFullscreen);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ToggleFullscreen);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnhideWindow);
   RAYLIB_LUA_SOL_ADD_FUNCTION(HideWindow);
@@ -637,13 +638,11 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMonitorName);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetClipboardText);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetClipboardText);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(ShowCursor);
   RAYLIB_LUA_SOL_ADD_FUNCTION(HideCursor);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsCursorHidden);
   RAYLIB_LUA_SOL_ADD_FUNCTION(EnableCursor);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DisableCursor);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(ClearBackground);
   RAYLIB_LUA_SOL_ADD_FUNCTION(BeginDrawing);
   RAYLIB_LUA_SOL_ADD_FUNCTION(EndDrawing);
@@ -655,27 +654,24 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(EndTextureMode);
   RAYLIB_LUA_SOL_ADD_FUNCTION(BeginScissorMode);
   RAYLIB_LUA_SOL_ADD_FUNCTION(EndScissorMode);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMouseRay);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(GetWorldToScreen);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetCameraMatrix);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetCameraMatrix2D);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetWorldToScreen);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetWorldToScreenEx);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetWorldToScreen2D);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetScreenToWorld2D);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetTargetFPS);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetFPS);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetFrameTime);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetTime);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(ColorToInt);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ColorNormalize);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(ColorFromNormalized);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ColorToHSV);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ColorFromHSV);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetColor);
   RAYLIB_LUA_SOL_ADD_FUNCTION(Fade);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetConfigFlags);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetTraceLogLevel);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetTraceLogExit);
@@ -685,9 +681,10 @@ void raylib_lua_sol_functions(sol::state &lua) {
   //RAYLIB_LUA_SOL_ADD_FUNCTION(TraceLog);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TakeScreenshot);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetRandomValue);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadFileData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SaveFileData);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(LoadFileText);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(SaveFileText);
   RAYLIB_LUA_SOL_ADD_FUNCTION(FileExists);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsFileExtension);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DirectoryExists);
@@ -695,6 +692,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetFileName);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetFileNameWithoutExt);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetDirectoryPath);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetPrevDirectoryPath);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetWorkingDirectory);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetDirectoryFiles);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ClearDirectoryFiles);
@@ -703,22 +701,17 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetDroppedFiles);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ClearDroppedFiles);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetFileModTime);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(CompressData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DecompressData);
-
-  RAYLIB_LUA_SOL_ADD_FUNCTION(LoadStorageValue);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SaveStorageValue);
-
+  RAYLIB_LUA_SOL_ADD_FUNCTION(LoadStorageValue);
   RAYLIB_LUA_SOL_ADD_FUNCTION(OpenURL);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsKeyPressed);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsKeyDown);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsKeyReleased);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsKeyUp);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(GetKeyPressed);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetExitKey);
-
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetKeyPressed);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsGamepadAvailable);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsGamepadName);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetGamepadName);
@@ -729,7 +722,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetGamepadButtonPressed);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetGamepadAxisCount);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetGamepadAxisMovement);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsMouseButtonPressed);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsMouseButtonDown);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsMouseButtonReleased);
@@ -741,11 +733,9 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetMouseOffset);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetMouseScale);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMouseWheelMove);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetTouchX);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetTouchY);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetTouchPosition);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetGesturesEnabled);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsGestureDetected);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetGestureDetected);
@@ -755,15 +745,12 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetGestureDragAngle);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetGesturePinchVector);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetGesturePinchAngle);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetCameraMode);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UpdateCamera);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetCameraPanControl);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetCameraAltControl);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetCameraSmoothZoomControl);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetCameraMoveControls);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawPixel);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawPixelV);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawLine);
@@ -777,6 +764,8 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawCircleGradient);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawCircleV);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawCircleLines);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(DrawEllipse);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(DrawEllipseLines);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawRing);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawRingLines);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawRectangle);
@@ -795,9 +784,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTriangleFan);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTriangleStrip);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawPoly);
-
-  RAYLIB_LUA_SOL_ADD_FUNCTION(SetShapesTexture);
-
+  RAYLIB_LUA_SOL_ADD_FUNCTION(DrawPolyLines);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CheckCollisionRecs);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CheckCollisionCircles);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CheckCollisionCircleRec);
@@ -805,7 +792,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(CheckCollisionPointRec);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CheckCollisionPointCircle);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CheckCollisionPointTriangle);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadImage);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadImageEx);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadImagePro);
@@ -826,7 +812,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetTextureData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetScreenData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UpdateTexture);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageCopy);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageFromImage);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageToPOT);
@@ -847,6 +832,10 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageDraw);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageDrawRectangle);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageDrawRectangleLines);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(ImageClearBackground);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(ImageDrawPixel);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(ImageDrawCircle);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(ImageDrawLineEx);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageDrawText);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageDrawTextEx);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageFlipVertical);
@@ -859,7 +848,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageColorContrast);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageColorBrightness);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ImageColorReplace);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenImageColor);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenImageGradientV);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenImageGradientH);
@@ -868,11 +856,9 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenImageWhiteNoise);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenImagePerlinNoise);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenImageCellular);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenTextureMipmaps);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetTextureFilter);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetTextureWrap);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTexture);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTextureV);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTextureEx);
@@ -880,7 +866,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTextureQuad);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTexturePro);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTextureNPatch);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetFontDefault);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadFont);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadFontEx);
@@ -888,22 +873,19 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadFontData);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenImageFontAtlas);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadFont);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawFPS);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawText);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTextEx);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTextRec);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTextRecEx);
-
+  RAYLIB_LUA_SOL_ADD_FUNCTION(DrawTextCodepoint);
   RAYLIB_LUA_SOL_ADD_FUNCTION(MeasureText);
   RAYLIB_LUA_SOL_ADD_FUNCTION(MeasureTextEx);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetGlyphIndex);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(GetNextCodepoint);
-
+  RAYLIB_LUA_SOL_ADD_FUNCTION(TextCopy);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextIsEqual);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextLength);
-  // TODO: Add TextFormat
-  //RAYLIB_LUA_SOL_ADD_FUNCTION(TextFormat);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(TextFormat);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextSubtext);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextReplace);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextInsert);
@@ -916,13 +898,10 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextToPascal);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextToInteger);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextToUtf8);
-
-  // UTF8 text strings management functions
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetCodepoints);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetCodepointsCount);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetNextCodepoint);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CodepointToUtf8);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawLine3D);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawPoint3D);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawCircle3D);
@@ -940,30 +919,21 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawRay);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawGrid);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawGizmo);
-
-  // Model loading/unloading functions
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadModel);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadModelFromMesh);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadModel);
-
-  // Mesh loading/unloading functions
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadMeshes);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ExportMesh);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadMesh);
-
-  // Material loading/unloading functions
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadMaterials);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadMaterialDefault);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadMaterial);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetMaterialTexture);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetModelMeshMaterial);
-
-  // Model animations loading/unloading functions
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadModelAnimations);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UpdateModelAnimation);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadModelAnimation);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsModelAnimationValid);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenMeshPoly);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenMeshPlane);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenMeshCube);
@@ -974,11 +944,9 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenMeshKnot);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenMeshHeightmap);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenMeshCubicmap);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(MeshBoundingBox);
   RAYLIB_LUA_SOL_ADD_FUNCTION(MeshTangents);
   RAYLIB_LUA_SOL_ADD_FUNCTION(MeshBinormals);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawModel);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawModelEx);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawModelWires);
@@ -986,7 +954,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawBoundingBox);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawBillboard);
   RAYLIB_LUA_SOL_ADD_FUNCTION(DrawBillboardRec);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(CheckCollisionSpheres);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CheckCollisionBoxes);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CheckCollisionBoxSphere);
@@ -996,15 +963,14 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetCollisionRayModel);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetCollisionRayTriangle);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetCollisionRayGround);
-
-  RAYLIB_LUA_SOL_ADD_FUNCTION(LoadText);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadShader);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadShaderCode);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadShader);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetShaderDefault);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetTextureDefault);
-
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetShapesTexture);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetShapesTextureRec);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(SetShapesTexture);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetShaderLocation);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetShaderValue);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetShaderValueV);
@@ -1013,19 +979,15 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetMatrixProjection);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetMatrixModelview);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMatrixModelview);
-
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetMatrixProjection);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenTextureCubemap);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenTextureIrradiance);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenTexturePrefilter);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GenTextureBRDF);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(BeginShaderMode);
   RAYLIB_LUA_SOL_ADD_FUNCTION(EndShaderMode);
   RAYLIB_LUA_SOL_ADD_FUNCTION(BeginBlendMode);
   RAYLIB_LUA_SOL_ADD_FUNCTION(EndBlendMode);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(BeginScissorMode);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(EndScissorMode);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(InitVrSimulator);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CloseVrSimulator);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UpdateVrTracking);
@@ -1034,7 +996,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(ToggleVrMode);
   RAYLIB_LUA_SOL_ADD_FUNCTION(BeginVrDrawing);
   RAYLIB_LUA_SOL_ADD_FUNCTION(EndVrDrawing);
-
   RAYLIB_LUA_SOL_ADD_FUNCTION(InitAudioDevice);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CloseAudioDevice);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsAudioDeviceReady);
@@ -1085,6 +1046,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(StopAudioStream);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetAudioStreamVolume);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetAudioStreamPitch);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(SetAudioStreamBufferSizeDefault);
 }
 
 void raylib_lua_sol(sol::state &lua) {
