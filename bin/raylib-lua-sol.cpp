@@ -85,7 +85,13 @@ int main(int argc, char *argv[])
     sol::state lua;
 
     // Load some of the Lua base libraries.
-    lua.open_libraries(sol::lib::base, sol::lib::table, sol::lib::math, sol::lib::string);
+    lua.open_libraries(
+      sol::lib::base,
+      sol::lib::package,
+      sol::lib::string,
+      sol::lib::math,
+      sol::lib::table,
+      sol::lib::jit);
 
     // Bootstrap Raylib.
     raylib_lua_sol(lua);

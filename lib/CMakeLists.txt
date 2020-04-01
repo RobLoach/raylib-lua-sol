@@ -4,7 +4,6 @@ find_package(Raylib)
 find_package(Sol)
 find_package(Lua 5.3 REQUIRED)
 
-
 add_library(libraylib-lua-sol STATIC libraylib-lua-sol)
 
 target_compile_definitions(libraylib-lua-sol PUBLIC -DLUA -DPHYSAC_NO_THREADS)
