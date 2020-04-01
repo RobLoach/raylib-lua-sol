@@ -44,6 +44,7 @@
 *
 ********************************************************************************************/
 
+#include <sol/sol.hpp>
 #include <iostream>
 #include <string>
 
@@ -98,11 +99,10 @@ int main(int argc, char *argv[])
 
     // Execute the script.
     // TODO: Use JIT compiler
-    try {
-      lua.script_file(fileToLoad);
-    }
-    catch (const std::exception& e) {
-      std::cout << e.what() << std::endl;
+    auto result = lua.safe_script_file(fileToLoad, sol::script_pass_on_error);
+    if (!result.valid()) {
+      sol::error err = result;
+      std::cerr << "The code was unable to run." << std::endl << err.what() << std::endl;
       return 1;
     }
 

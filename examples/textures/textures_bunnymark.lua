@@ -87,7 +87,7 @@ while not WindowShouldClose() do    -- Detect window close button or ESC key
             -- Process of sending data is costly and it could happen that GPU data has not been completely
             -- processed for drawing while new data is tried to be sent (updating current in-use buffers)
             -- it could generates a stall and consequently a frame drop, limiting the number of drawn bunnies
-            DrawTexture(texBunny, bunnies[i].position.x, bunnies[i].position.y, bunnies[i].color);
+            DrawTexture(texBunny, math.floor(bunnies[i].position.x), math.floor(bunnies[i].position.y), bunnies[i].color);
         end
 
         DrawRectangle(0, 0, screenWidth, 40, BLACK)
