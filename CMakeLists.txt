@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.11)
 project (raylib-lua-sol
-  VERSION 0.2.0
+  VERSION 0.2.1
   DESCRIPTION "Lua bindings for raylib"
   HOMEPAGE_URL "https://github.com/RobLoach/raylib-lua-sol"
-  LANGUAGES CXX)
+  LANGUAGES C CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
