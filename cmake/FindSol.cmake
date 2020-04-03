@@ -1,4 +1,4 @@
-find_package(sol 3.0)
+find_package(sol 3.0 QUIET HINTS "${CMAKE_CURRENT_SOURCE_DIR}/libs")
 if (NOT sol_FOUND)
   include(FetchContent)
   FetchContent_Declare(

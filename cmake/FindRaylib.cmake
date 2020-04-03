@@ -1,4 +1,4 @@
-find_package(raylib 3.0.0)
+find_package(raylib 3.0.0 QUIET HINTS "${CMAKE_CURRENT_SOURCE_DIR}/lib")
 if (NOT raylib_FOUND)
   include(FetchContent)
   FetchContent_Declare(

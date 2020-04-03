@@ -5,6 +5,21 @@ project (raylib-lua-sol
   HOMEPAGE_URL "https://github.com/RobLoach/raylib-lua-sol"
   LANGUAGES C CXX)
 
+ADD_DEFINITIONS(/bigobj)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
+SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /bigobj")
+SET(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} /bigobj")
+SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /bigobj")
+SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} /bigobj")
+
+set(CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib")
+set(CMAKE_FIND_ROOT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib")
+
+set(LUA_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/lib/lua/lua53.lib")
+set(LUA_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/lib/lua")
+set(LUA_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib/lua/include")
+find_package(lua 5.3)
+
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 option(BUILD_LIBRARY "Library" ON)
@@ -25,8 +40,8 @@ if (BUILD_EXAMPLES)
   add_subdirectory(examples)
 endif()
 
-include(CTest)
-enable_testing()
-if(BUILD_TESTING)
-  add_subdirectory(tests)
-endif()
+#include(CTest)
+#enable_testing()
+#if(BUILD_TESTING)
+#  add_subdirectory(tests)
+#endif()
