@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\external\glfw\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\context.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\init.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\input.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\monitor.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\vulkan.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\window.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\win32_init.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\win32_joystick.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\win32_monitor.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\win32_time.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\win32_thread.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\win32_window.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\wgl_context.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\egl_context.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.dir\$(Configuration)\osmesa_context.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Object Libraries">
+      <UniqueIdentifier>{14BDFEC6-4E31-3066-922E-3ECE7F79F6B8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

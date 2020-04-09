@@ -1,0 +1,15 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CPack.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CPackComponent.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-3.17/Templates/CPackConfig.cmake.in
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/cmake/BuildType.cmake
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/cmake/EnumOption.cmake
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/cmake/raylib-config-version.cmake
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/raylib.pc.in
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/src/CMakeLists.txt
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/src/CMakeOptions.txt
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/src/config.h.in

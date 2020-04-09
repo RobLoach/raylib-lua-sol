@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9772460F-C794-32F7-AB47-F70C6F292E38}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>raylib-populate</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3ffbf15ae814a4982b3af750450cbf33\raylib-populate-mkdir.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Creating directories for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Creating directories for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Creating directories for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Creating directories for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3ffbf15ae814a4982b3af750450cbf33\raylib-populate-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing download step (git clone) for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\raylib-populate-gitinfo.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing download step (git clone) for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\raylib-populate-gitinfo.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing download step (git clone) for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\raylib-populate-gitinfo.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing download step (git clone) for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\raylib-populate-gitinfo.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3ffbf15ae814a4982b3af750450cbf33\raylib-populate-update.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing update step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing update step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing update step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing update step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3ffbf15ae814a4982b3af750450cbf33\raylib-populate-patch.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">No patch step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">No patch step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">No patch step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">No patch step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3ffbf15ae814a4982b3af750450cbf33\raylib-populate-configure.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">No configure step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\tmp\raylib-populate-cfgcmd.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">No configure step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\tmp\raylib-populate-cfgcmd.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">No configure step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\tmp\raylib-populate-cfgcmd.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">No configure step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\tmp\raylib-populate-cfgcmd.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3ffbf15ae814a4982b3af750450cbf33\raylib-populate-build.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">No build step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">No build step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">No build step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">No build step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3ffbf15ae814a4982b3af750450cbf33\raylib-populate-install.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">No install step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">No install step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">No install step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">No install step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3ffbf15ae814a4982b3af750450cbf33\raylib-populate-test.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">No test step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">No test step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">No test step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">No test step for 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\6ab0b91d18ca07f1a8433beac2d9bed8\raylib-populate-complete.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Completed 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/$(Configuration)/raylib-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\$(Configuration)\raylib-populate-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Completed 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/$(Configuration)/raylib-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\$(Configuration)\raylib-populate-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Completed 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/$(Configuration)/raylib-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\$(Configuration)\raylib-populate-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Completed 'raylib-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/$(Configuration)/raylib-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/$(Configuration)/raylib-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-install;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-mkdir;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-download;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-update;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-patch;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-configure;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-build;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\src\raylib-populate-stamp\$(Configuration)\raylib-populate-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\$(Configuration)\raylib-populate-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\31b417bf9bbe511590a0f45159005faf\raylib-populate.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\$(Configuration)\raylib-populate-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\raylib-populate</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\$(Configuration)\raylib-populate-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\raylib-populate</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\$(Configuration)\raylib-populate-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\raylib-populate</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\$(Configuration)\raylib-populate-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\raylib-populate</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild -BD:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild --check-stamp-file D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\RepositoryInfo.txt.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3.17.0\CMakeSystem.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\tmp\raylib-populate-cfgcmd.txt.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild -BD:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild --check-stamp-file D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\RepositoryInfo.txt.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3.17.0\CMakeSystem.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\tmp\raylib-populate-cfgcmd.txt.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild -BD:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild --check-stamp-file D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\RepositoryInfo.txt.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3.17.0\CMakeSystem.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\tmp\raylib-populate-cfgcmd.txt.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild -BD:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild --check-stamp-file D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\RepositoryInfo.txt.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\3.17.0\CMakeSystem.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\raylib-populate-prefix\tmp\raylib-populate-cfgcmd.txt.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\CMakeFiles\raylib-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-subbuild\ZERO_CHECK.vcxproj">
+      <Project>{4A6E1E97-C58A-3338-A658-3189DACA8AB1}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

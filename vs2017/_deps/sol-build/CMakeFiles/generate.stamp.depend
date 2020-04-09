@@ -1,0 +1,8 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.17/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/WriteBasicConfigVersionFile.cmake
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/sol-src/CMakeLists.txt
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/sol-src/cmake/sol2-config.cmake.in

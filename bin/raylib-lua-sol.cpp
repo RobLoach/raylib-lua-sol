@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 {
     std::string executableName;
     std::string fileToLoad;
-
+        
     switch (argc) {
         case 0:
             executableName = "raylib-lua-sol";

@@ -1,0 +1,7 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckCCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckCSourceCompiles.cmake
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/CMakeLists.txt
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/cmake/AddIfFlagCompiles.cmake
+D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/cmake/CheckFileSystemSymlinkSupport.cmake

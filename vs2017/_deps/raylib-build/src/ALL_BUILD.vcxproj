@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1E4E32EE-4ABB-3468-BA4F-CFC27D8E62F7}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Documents\PROJECTS\raylib-lua-sol\include;D:\Documents\PROJECTS\raylib-lua-sol\build;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\.;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Documents\PROJECTS\raylib-lua-sol\include;D:\Documents\PROJECTS\raylib-lua-sol\build;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\.;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Documents\PROJECTS\raylib-lua-sol\include;D:\Documents\PROJECTS\raylib-lua-sol\build;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\.;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Documents\PROJECTS\raylib-lua-sol\include;D:\Documents\PROJECTS\raylib-lua-sol\build;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\.;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Documents/PROJECTS/raylib-lua-sol -BD:/Documents/PROJECTS/raylib-lua-sol/build --check-stamp-file D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\BuildType.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\EnumOption.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\LibraryPathToLinkerFlags.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\PopulateConfigVariablesLocally.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\raylib-config-version.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\raylib.pc.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\CMakeOptions.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Documents/PROJECTS/raylib-lua-sol -BD:/Documents/PROJECTS/raylib-lua-sol/build --check-stamp-file D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\BuildType.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\EnumOption.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\LibraryPathToLinkerFlags.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\PopulateConfigVariablesLocally.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\raylib-config-version.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\raylib.pc.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\CMakeOptions.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Documents/PROJECTS/raylib-lua-sol -BD:/Documents/PROJECTS/raylib-lua-sol/build --check-stamp-file D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\BuildType.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\EnumOption.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\LibraryPathToLinkerFlags.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\PopulateConfigVariablesLocally.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\raylib-config-version.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\raylib.pc.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\CMakeOptions.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-src/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Documents/PROJECTS/raylib-lua-sol -BD:/Documents/PROJECTS/raylib-lua-sol/build --check-stamp-file D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\BuildType.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\EnumOption.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\LibraryPathToLinkerFlags.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\PopulateConfigVariablesLocally.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\cmake\raylib-config-version.cmake;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\raylib.pc.in;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\CMakeOptions.txt;D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-src\src\config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Documents\PROJECTS\raylib-lua-sol\build\ZERO_CHECK.vcxproj">
+      <Project>{97B4595F-DDD0-3BA7-A922-00CFFEF477F1}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw.vcxproj">
+      <Project>{11CECD7D-0403-3D4E-BA04-C9481D000C85}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\external\glfw\src\glfw_objlib.vcxproj">
+      <Project>{03E81727-7C63-3228-99F9-C3B6E1ABA286}</Project>
+      <Name>glfw_objlib</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Documents\PROJECTS\raylib-lua-sol\build\_deps\raylib-build\src\raylib_static.vcxproj">
+      <Project>{BB5CFFA6-2C3B-3D8E-8083-265A1AD575D8}</Project>
+      <Name>raylib_static</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
