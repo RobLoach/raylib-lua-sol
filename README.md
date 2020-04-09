@@ -51,6 +51,16 @@ cmake ..
 make
 ```
 
+## Build (Windows)
+
+The following was done on Windows 10 with Visual Studio with [CMake tools plugin](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=vs-2019) installed
+
+1. Open Visual Studio 2017
+2. File > Open > Folder: raylib-lua-sol
+3. CMake > Install > raylib
+4. CMake > Build All
+5. Somewhere in ouput it will say `Build files have been written to: C:/path/to/x86-Release-or-Debug`. You will find raylib-lua-sol.exe in there. It can be copied to another folder and you can drop lua files on it.
+
 ## Development
 
 ``` bash
