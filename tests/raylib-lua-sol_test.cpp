@@ -39,10 +39,11 @@ TEST_CASE("raylib-lua-sol-test", "[raylib-lua-sol-test]" ) {
     //REQUIRE_FALSE(script.valid());
   }
 
+  // TODO: Fix structs.
   SECTION("Rectangle") {
     auto script = lua.safe_script("theRect = Rectangle(10.0, 20.0, 30.0, 40.0)", sol::script_pass_on_error);
     REQUIRE(script.valid());
-    float w = lua["theRect"]["width"];
-    CHECK(w == 30.0f);
+    float width = lua["theRect"]["width"];
+    CHECK(width == 30.0f);
   }
 }

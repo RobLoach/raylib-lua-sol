@@ -49,6 +49,8 @@
 #include <string>
 
 #include "raylib.h"
+
+#define SOL_PRINT_ERRORS
 #include "raylib-lua-sol.hpp"
 
 int main(int argc, char *argv[])
