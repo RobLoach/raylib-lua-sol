@@ -6,7 +6,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 
-TEST_CASE("raylib_test functions work", "[raylib_test]" ) {
+TEST_CASE("raylib-lua-sol-test", "[raylib-lua-sol-test]" ) {
 	// Initialize the environment.
 	sol::state lua;
 	raylib_lua_sol(lua);

@@ -1,9 +1,6 @@
 [submodule "vendor/sol2"]
 	path = vendor/sol2
 	url = https://github.com/ThePhD/sol2.git
-[submodule "vendor/lua"]
-	path = vendor/lua
-	url = https://github.com/LuaDist/lua.git
 [submodule "vendor/raylib"]
 	path = vendor/raylib
 	url = https://github.com/raysan5/raylib.git
