@@ -1,3 +1,0 @@
-D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/raylib-populate.dir
-D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/ALL_BUILD.dir
-D:/Documents/PROJECTS/raylib-lua-sol/build/_deps/raylib-subbuild/CMakeFiles/ZERO_CHECK.dir

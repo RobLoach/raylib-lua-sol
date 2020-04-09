@@ -1,3 +1,0 @@
-repository='https://github.com/raysan5/raylib.git'
-module=''
-tag='origin'
