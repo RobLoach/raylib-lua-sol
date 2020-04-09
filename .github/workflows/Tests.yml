@@ -9,7 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      submodules: recursive
+      with:
+        submodules: recursive
 
     - name: Install Dependencies
       run: sudo apt-get install xorg-dev libglu1-mesa-dev
