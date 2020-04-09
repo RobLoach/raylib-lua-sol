@@ -45,6 +45,7 @@ bin/raylib-lua-sol examples/core_basic_window.lua
 ``` bash
 git clone https://github.com/RobLoach/raylib-lua-sol.git
 cd raylib-lua-sol
+git submodule update --init
 mkdir build
 cd build
 cmake ..
