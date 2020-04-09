@@ -6,6 +6,7 @@ project (raylib-lua-sol
   LANGUAGES C CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+configure_file(${CMAKE_SOURCE_DIR}/cmake/CTestCustom.cmake ${CMAKE_BINARY_DIR})
 
 # raylib
 find_package(raylib 3.0.0)
