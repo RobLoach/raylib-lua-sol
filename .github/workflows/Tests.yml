@@ -24,8 +24,6 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - name: Install Dependencies
-      run: sudo apt-get install xorg-dev libglu1-mesa-dev
     - name: Configure
       run: cmake -B build .
     - name: Build
