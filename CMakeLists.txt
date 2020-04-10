@@ -62,7 +62,6 @@ add_library(sol2 INTERFACE)
 target_include_directories(sol2 INTERFACE ${SOL2_DIR}/include/)
 
 # Options
-#option(BUILD_LIBRARY "Library" ON)
 option(BUILD_BIN "Binary" ON)
 option(BUILD_EXAMPLES "Examples" ON)
 
