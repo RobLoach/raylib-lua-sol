@@ -44,11 +44,14 @@
 *
 ********************************************************************************************/
 
-#include <sol/sol.hpp>
 #include <iostream>
 #include <string>
 
 #include "raylib.h"
+
+#define SOL_PRINT_ERRORS 1
+#include <sol/sol.hpp>
+
 #include "raylib-lua-sol.hpp"
 
 int main(int argc, char *argv[])
