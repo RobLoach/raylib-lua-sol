@@ -611,6 +611,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(CloseWindow);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsWindowReady);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsWindowMinimized);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(IsWindowFocused);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsWindowResized);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsWindowHidden);
   RAYLIB_LUA_SOL_ADD_FUNCTION(IsWindowFullscreen);
@@ -632,6 +633,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMonitorPhysicalWidth);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMonitorPhysicalHeight);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetWindowPosition);
+  RAYLIB_LUA_SOL_ADD_FUNCTION(GetWindowScaleDPI);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetMonitorName);
   RAYLIB_LUA_SOL_ADD_FUNCTION(GetClipboardText);
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetClipboardText);
@@ -789,7 +791,6 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(CheckCollisionPointTriangle);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadImage);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadImageEx);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(LoadImagePro);
   RAYLIB_LUA_SOL_ADD_FUNCTION(LoadImageRaw);
   RAYLIB_LUA_SOL_ADD_FUNCTION(UnloadImage);
   RAYLIB_LUA_SOL_ADD_FUNCTION(ExportImage);

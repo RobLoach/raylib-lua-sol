@@ -10,6 +10,12 @@
 TEST_CASE("raylib-lua-sol-test", "[raylib-lua-sol-test]" ) {
 	// Initialize the environment.
 	sol::state lua;
+  lua.open_libraries(
+    sol::lib::base,
+    sol::lib::package,
+    sol::lib::string,
+    sol::lib::math,
+    sol::lib::table);
 	raylib_lua_sol(lua);
 
   SECTION("IsWindowReady") {
