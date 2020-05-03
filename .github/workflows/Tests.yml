@@ -31,4 +31,4 @@ jobs:
       run: cmake --build build
     - name: Test
       working-directory: build
-      run: ctest --output-on-failure
+      run: make test
