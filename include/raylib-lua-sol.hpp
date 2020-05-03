@@ -1,8 +1,8 @@
 #ifndef RAYLIB_LUA_SOL_
 #define RAYLIB_LUA_SOL_
 
-#include <raylib.h>
-#include <sol/sol.hpp>
+#include "raylib.h"
+#include "sol/sol.hpp"
 
 void raylib_lua_sol_color(sol::state &lua) {
 	lua.new_usertype<Color>("Color",
@@ -1050,11 +1050,20 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(SetAudioStreamBufferSizeDefault);
 }
 
+void TraceLogWrapper(int messageType, const std::string& message) {
+  TraceLog(messageType, message.c_str());
+}
+
+void raylib_lua_sol_function_wrappers(sol::state &lua) {
+  lua.set_function("TraceLog", &TraceLogWrapper);
+}
+
 void raylib_lua_sol(sol::state &lua) {
 	raylib_lua_sol_color(lua);
 	raylib_lua_sol_structs(lua);
 	raylib_lua_sol_enums(lua);
   raylib_lua_sol_functions(lua);
+  raylib_lua_sol_function_wrappers(lua);
 }
 
 #endif // RAYLIB_LUA_SOL_

@@ -16,7 +16,8 @@ jobs:
     - name: Build
       run: cmake --build build
     - name: Test
-      run: ./build/tests/raylib-lua-sol_test
+      working-directory: build
+      run: ctest --output-on-failure
 
   build-windows:
     runs-on: windows-latest
@@ -29,4 +30,5 @@ jobs:
     - name: Build
       run: cmake --build build
     - name: Test
-      run: make test
+      working-directory: build
+      run: ctest --output-on-failure
