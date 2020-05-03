@@ -30,5 +30,4 @@ jobs:
     - name: Build
       run: cmake --build build
     - name: Test
-      working-directory: build
-      run: make test
+      run: make -C build test
