@@ -28,11 +28,8 @@ jobs:
     - name: Make build directory
       run: mkdir build
     - name: Configure
-      working-directory: build
-      run: cmake ..
+      run: cd build && cmake ..
     - name: Build
-      working-directory: build
-      run: make
+      run: cd build && make
     - name: Test
-      working-directory: build
-      run: make test
+      run: cd build && make test
