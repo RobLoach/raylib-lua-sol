@@ -50,6 +50,7 @@
 #include "raylib.h"
 
 #define SOL_PRINT_ERRORS 1
+#define SOL_ALL_SAFETIES_ON 1
 #include <sol/sol.hpp>
 
 #include "raylib-lua-sol.hpp"
@@ -89,19 +90,18 @@ int main(int argc, char *argv[])
     sol::state lua;
 
     // Load some of the Lua base libraries.
+    // TODO: Use JIT compiler
     lua.open_libraries(
       sol::lib::base,
       sol::lib::package,
       sol::lib::string,
       sol::lib::math,
-      sol::lib::table,
-      sol::lib::jit);
+      sol::lib::table);
 
     // Bootstrap Raylib.
     raylib_lua_sol(lua);
 
     // Execute the script.
-    // TODO: Use JIT compiler
     auto result = lua.safe_script_file(fileToLoad, sol::script_pass_on_error);
     if (!result.valid()) {
       sol::error err = result;

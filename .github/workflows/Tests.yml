@@ -3,23 +3,31 @@ name: Tests
 on: [push, pull_request]
 
 jobs:
-  Test:
-
+  build-ubuntu:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-
     - name: Install Dependencies
       run: sudo apt-get install xorg-dev libglu1-mesa-dev
-
     - name: Configure
       run: cmake -B build .
-
     - name: Build
       run: cmake --build build
-
     - name: Test
-      run: ./build/tests/raylib-lua-sol_test
+      working-directory: build
+      run: ctest --output-on-failure
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Configure
+      run: cmake -B build .
+    - name: Build
+      run: cmake --build build
+    - name: Test
+      run: build\bin\Debug\raylib-lua-sol.exe tests/raylib-lua-sol-tests.lua
