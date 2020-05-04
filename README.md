@@ -42,19 +42,22 @@ bin/raylib-lua-sol examples/core_basic_window.lua
 
 ## Build
 
+*raylib-lua-sol* uses cmake as a primary development target. Would appreciate adding more project templates, however.
+
 ``` bash
 git clone https://github.com/RobLoach/raylib-lua-sol.git
 cd raylib-lua-sol
 git submodule update --init
-mkdir build
-cd build
-cmake ..
-make
+cmake -B build .
+cmake --build build
 ```
 
 ## Development
 
+To run tests, use `make test`...
+
 ``` bash
+cd build
 make test
 ```
 
