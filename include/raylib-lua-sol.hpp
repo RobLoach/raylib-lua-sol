@@ -4,23 +4,7 @@
 #include "raylib.h"
 #include "sol/sol.hpp"
 
-void raylib_lua_sol_color(sol::state &lua) {
-	lua.new_usertype<Color>("Color",
-    sol::call_constructor, sol::factories(
-      [](){
-        return Color{};
-      },
-      [](unsigned char r, unsigned char g, unsigned char b) {
-        return Color{r, g, b, 255};
-      },
-      [](unsigned char r, unsigned char g, unsigned char b, unsigned char a) {
-        return Color{r, g, b, a};
-      }
-    ),
-		"r", &Color::r,
-		"g", &Color::g,
-		"b", &Color::b,
-		"a", &Color::a);
+void raylib_lua_sol_color(sol::state& lua) {
 	lua["LIGHTGRAY"] = Color(LIGHTGRAY);
 	lua["GRAY"] = Color(GRAY);
 	lua["DARKGRAY"] = Color(DARKGRAY);
@@ -49,21 +33,58 @@ void raylib_lua_sol_color(sol::state &lua) {
 	lua["RAYWHITE"] = Color(RAYWHITE);
 }
 
-void raylib_lua_sol_structs(sol::state &lua) {
+void raylib_lua_sol_structs(sol::state& lua) {
+  lua.new_usertype<Rectangle>("Rectangle",
+    sol::call_constructor, sol::factories(
+      []() {
+        return Rectangle{};
+      },
+      [](Rectangle const& r) {
+        return Rectangle{r.x, r.y, r.width, r.height};
+      },
+      [](float x, float y, float width, float height) {
+        return Rectangle{x, y, width, height};
+      }
+    ),
+    "x", &Rectangle::x,
+    "y", &Rectangle::y,
+    "width", &Rectangle::width,
+    "height", &Rectangle::height,
+    sol::meta_function::to_string, [](Rectangle& r) {
+      return TextFormat("{x: %02.02f, y: %02.02f, width: %02.02f, height: %02.02f}", r.x, r.y, r.width, r.height);
+    }
+  );
+
+  lua.new_usertype<Color>("Color",
+    sol::call_constructor, sol::factories(
+      [](){
+        return Color{};
+      },
+      [](unsigned char r, unsigned char g, unsigned char b) {
+        return Color{r, g, b, 255};
+      },
+      [](unsigned char r, unsigned char g, unsigned char b, unsigned char a) {
+        return Color{r, g, b, a};
+      }
+    ),
+    "r", &Color::r,
+    "g", &Color::g,
+    "b", &Color::b,
+    "a", &Color::a);
 	lua.new_usertype<Vector2>("Vector2",
     sol::call_constructor, sol::factories(
       [](){
         return Vector2{};
-      },
-      [](float x){
-        return Vector2{x, 0};
       },
       [](float x, float y){
         return Vector2{x, y};
       }
     ),
 		"x", &Vector2::x,
-		"y", &Vector2::y);
+		"y", &Vector2::y,
+    sol::meta_function::to_string, [](Vector2& v) {
+      return TextFormat("{x: %02.02f, y: %02.02f}", v.x, v.y);
+    });
 	lua.new_usertype<Vector3>("Vector3",
     sol::call_constructor, sol::factories(
       [](){
@@ -129,22 +150,6 @@ void raylib_lua_sol_structs(sol::state &lua) {
 		"m13", &Matrix::m13,
 		"m14", &Matrix::m14,
 		"m15", &Matrix::m15);
-	lua.new_usertype<Rectangle>("Rectangle",
-    sol::call_constructor, sol::factories(
-      [](){
-        return Rectangle{};
-      },
-      [](float x, float y){
-        return Rectangle{x, y, 0, 0};
-      },
-      [](float x, float y, float width, float height){
-        return Rectangle{x, y, width, height};
-      }
-    ),
-		"x", &Rectangle::x,
-		"y", &Rectangle::y,
-		"width", &Rectangle::width,
-		"height", &Rectangle::height);
 	lua.new_usertype<Image>("Image",
 		"data", &Image::data,
 		"width", &Image::width,
@@ -1058,9 +1063,9 @@ void raylib_lua_sol_function_wrappers(sol::state &lua) {
   lua.set_function("TraceLog", &TraceLogWrapper);
 }
 
-void raylib_lua_sol(sol::state &lua) {
+void raylib_lua_sol(sol::state& lua) {
+  raylib_lua_sol_structs(lua);
 	raylib_lua_sol_color(lua);
-	raylib_lua_sol_structs(lua);
 	raylib_lua_sol_enums(lua);
   raylib_lua_sol_functions(lua);
   raylib_lua_sol_function_wrappers(lua);

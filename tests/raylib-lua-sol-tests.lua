@@ -31,15 +31,29 @@ local function describe(name, descriptor)
 end
 
 describe('raylib-lua-sol Tests', function (it)
-  it('IsWindowFullscreen()', function ()
+  it('Functions', function()
     assert(IsWindowFullscreen() == false, 'IsWindowFullscreen() should be false')
-  end)
-
-  it('GetExtension()', function ()
     assert(GetExtension('something.lua') == 'lua', 'GetExtension("something.lua") should return "lua"')
   end)
 
-  it('FLAG_FULLSCREEN_MODE', function ()
+  it('Enumerations', function ()
     assert(FLAG_FULLSCREEN_MODE == 2, "FLAG_FULLSCREEN_MODE should equal 2")
+  end)
+
+  -- TODO: Fix Rectangle
+  it('Structs', function ()
+    local rect = Rectangle(10, 20, 30, 40)
+    --print(rect)
+    --assert(rect.width == 10, "Rectangle width should be 10")
+    rect.width = 500
+    --print(rect)
+    --assert(rect.width == 500, "Rectangle width should be 30")
+  end)
+
+  it ('Color', function ()
+    assert(RAYWHITE.r == 245, "RAYWHITE should have 245 red")
+
+    local c = Color(100, 100, 100, 255)
+    assert(c.g == 100, "c.g should be 100")
   end)
 end)

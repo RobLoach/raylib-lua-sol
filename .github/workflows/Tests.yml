@@ -25,11 +25,10 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - name: Make build directory
-      run: mkdir build
     - name: Configure
-      run: cd build && cmake ..
+      run: cmake -B build .
     - name: Build
-      run: cd build && make
+      run: cmake --build build
     - name: Test
-      run: cd build && make test
+      working-directory: build
+      run: build/bin/raylib-lua-sol tests/raylib-lua-sol-tests.lua
