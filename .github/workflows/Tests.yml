@@ -30,5 +30,4 @@ jobs:
     - name: Build
       run: cmake --build build
     - name: Test
-      working-directory: build
-      run: build/bin/raylib-lua-sol tests/raylib-lua-sol-tests.lua
+      run: build\bin\Debug\raylib-lua-sol.exe tests/raylib-lua-sol-tests.lua
