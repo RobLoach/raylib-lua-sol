@@ -5,5 +5,5 @@
 	path = vendor/raylib
 	url = https://github.com/raysan5/raylib.git
 [submodule "vendor/lua-5.3.5"]
-	path = vendor/lua-5.3.5
+	path = vendor/lua
 	url = https://github.com/lua/lua.git

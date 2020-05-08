@@ -1,9 +1,4 @@
 add_test(
   NAME raylib-lua-sol-tests
   COMMAND raylib-lua-sol
-  raylib-lua-sol-tests.lua)
-
-file(
-  COPY raylib-lua-sol-tests.lua
-  DESTINATION .
-)
+  ${CMAKE_CURRENT_SOURCE_DIR}/raylib-lua-sol-tests.lua)

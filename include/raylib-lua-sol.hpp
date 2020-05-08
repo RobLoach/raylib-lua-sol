@@ -54,7 +54,6 @@ void raylib_lua_sol_structs(sol::state& lua) {
       return TextFormat("{x: %02.02f, y: %02.02f, width: %02.02f, height: %02.02f}", r.x, r.y, r.width, r.height);
     }
   );
-
   lua.new_usertype<Color>("Color",
     sol::call_constructor, sol::factories(
       [](){
@@ -102,7 +101,10 @@ void raylib_lua_sol_structs(sol::state& lua) {
     ),
 		"x", &Vector3::x,
 		"y", &Vector3::y,
-		"z", &Vector3::z);
+		"z", &Vector3::z,
+    sol::meta_function::to_string, [](Vector3& v) {
+      return TextFormat("{x: %02.02f, y: %02.02f, z: %02.02f}", v.x, v.y, v.z);
+    });
 	lua.new_usertype<Vector4>("Vector4",
     sol::call_constructor, sol::factories(
       [](){
@@ -1064,11 +1066,11 @@ void raylib_lua_sol_function_wrappers(sol::state &lua) {
 }
 
 void raylib_lua_sol(sol::state& lua) {
-  raylib_lua_sol_structs(lua);
 	raylib_lua_sol_color(lua);
 	raylib_lua_sol_enums(lua);
   raylib_lua_sol_functions(lua);
   raylib_lua_sol_function_wrappers(lua);
+  raylib_lua_sol_structs(lua);
 }
 
 #endif // RAYLIB_LUA_SOL_
