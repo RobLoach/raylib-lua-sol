@@ -4,7 +4,7 @@
 #include "raylib.h"
 #include "sol/sol.hpp"
 
-void raylib_lua_sol_color(sol::state& lua) {
+void raylib_lua_sol_color(sol::state_view& lua) {
 	lua["LIGHTGRAY"] = Color(LIGHTGRAY);
 	lua["GRAY"] = Color(GRAY);
 	lua["DARKGRAY"] = Color(DARKGRAY);
@@ -33,7 +33,7 @@ void raylib_lua_sol_color(sol::state& lua) {
 	lua["RAYWHITE"] = Color(RAYWHITE);
 }
 
-void raylib_lua_sol_structs(sol::state& lua) {
+void raylib_lua_sol_structs(sol::state_view& lua) {
   lua.new_usertype<Rectangle>("Rectangle",
     sol::call_constructor, sol::factories(
       []() {
@@ -339,7 +339,7 @@ void raylib_lua_sol_structs(sol::state& lua) {
 #define RAYLIB_LUA_SOL_ADD_ENUM(x) \
   lua[#x] = x
 
-void raylib_lua_sol_enums(sol::state &lua) {
+void raylib_lua_sol_enums(sol::state_view &lua) {
   RAYLIB_LUA_SOL_ADD_ENUM(FLAG_RESERVED);
   RAYLIB_LUA_SOL_ADD_ENUM(FLAG_FULLSCREEN_MODE);
   RAYLIB_LUA_SOL_ADD_ENUM(FLAG_WINDOW_RESIZABLE);
@@ -612,7 +612,7 @@ void raylib_lua_sol_enums(sol::state &lua) {
 #define RAYLIB_LUA_SOL_ADD_FUNCTION(x) \
   lua.set_function(#x, x)
 
-void raylib_lua_sol_functions(sol::state &lua) {
+void raylib_lua_sol_functions(sol::state_view &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(InitWindow);
   RAYLIB_LUA_SOL_ADD_FUNCTION(WindowShouldClose);
   RAYLIB_LUA_SOL_ADD_FUNCTION(CloseWindow);
@@ -1061,11 +1061,11 @@ void TraceLogWrapper(int messageType, const std::string& message) {
   TraceLog(messageType, message.c_str());
 }
 
-void raylib_lua_sol_function_wrappers(sol::state &lua) {
+void raylib_lua_sol_function_wrappers(sol::state_view &lua) {
   lua.set_function("TraceLog", &TraceLogWrapper);
 }
 
-void raylib_lua_sol(sol::state& lua) {
+void raylib_lua_sol(sol::state_view& lua) {
 	raylib_lua_sol_color(lua);
 	raylib_lua_sol_enums(lua);
   raylib_lua_sol_functions(lua);
