@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11)
 project (raylib-lua-sol
-  VERSION 0.2.1
+  VERSION 0.2.2
   DESCRIPTION "Lua bindings for raylib"
   HOMEPAGE_URL "https://github.com/RobLoach/raylib-lua-sol"
   LANGUAGES C CXX)

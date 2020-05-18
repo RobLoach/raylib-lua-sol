@@ -50,4 +50,8 @@ describe('raylib-lua-sol Tests', function (it)
     local c = Color(100, 100, 100, 255)
     assert(c.g == 100, "c.g should be 100")
   end)
+
+  it('rlgl', function ()
+    assert(MAX_MATERIAL_MAPS == 12, "MAX_MATERIAL_MAPS should be 12")
+  end)
 end)

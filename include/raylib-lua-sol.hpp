@@ -3,6 +3,7 @@
 
 #include "raylib.h"
 #include "sol/sol.hpp"
+#include "./raylib-lua-sol-rlgl.hpp"
 
 void raylib_lua_sol_color(sol::state& lua) {
 	lua["LIGHTGRAY"] = Color(LIGHTGRAY);
@@ -126,7 +127,10 @@ void raylib_lua_sol_structs(sol::state& lua) {
 		"x", &Vector4::x,
 		"y", &Vector4::y,
 		"z", &Vector4::z,
-		"w", &Vector4::w);
+		"w", &Vector4::w,
+    sol::meta_function::to_string, [](Vector4& v) {
+      return TextFormat("{x: %02.02f, y: %02.02f, z: %02.02f, w: %02.02f}", v.x, v.y, v.z, v.w);
+    });
 	lua.new_usertype<Matrix>("Matrix",
     sol::call_constructor, sol::factories(
       [](){
@@ -893,7 +897,7 @@ void raylib_lua_sol_functions(sol::state &lua) {
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextCopy);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextIsEqual);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextLength);
-  RAYLIB_LUA_SOL_ADD_FUNCTION(TextFormat);
+  //RAYLIB_LUA_SOL_ADD_FUNCTION(TextFormat);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextSubtext);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextReplace);
   RAYLIB_LUA_SOL_ADD_FUNCTION(TextInsert);
@@ -1071,6 +1075,7 @@ void raylib_lua_sol(sol::state& lua) {
   raylib_lua_sol_functions(lua);
   raylib_lua_sol_function_wrappers(lua);
   raylib_lua_sol_structs(lua);
+  raylib_lua_sol_rlgl(lua);
 }
 
 #endif // RAYLIB_LUA_SOL_
