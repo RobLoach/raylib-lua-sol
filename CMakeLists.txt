@@ -22,20 +22,22 @@ endif()
 # Options
 option(BUILD_BIN "Binary" ON)
 option(BUILD_EXAMPLES "Examples" ON)
+option(BUILD_LIB "Library" ON)
 
 add_subdirectory(include)
 
-if (BUILD_BIN)
+if (BUILD_BIN OR BUILD_LIB)
   # raylib
   find_package(raylib 3.0.0)
   if (NOT raylib_FOUND)
     set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE) # don't build the supplied examples
     set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
-    add_subdirectory(vendor/raylib)
+    set(WITH_PIC ON)
+    add_subdirectory(${CMAKE_SOURCE_DIR}/vendor/raylib)
   endif()
 
   # Lua
-  set(LUA_DIR vendor/lua)
+  set(LUA_DIR ${CMAKE_SOURCE_DIR}/vendor/lua)
   set(LUA_SRC
       ${LUA_DIR}/lapi.c
       ${LUA_DIR}/lcode.c
@@ -75,11 +77,16 @@ if (BUILD_BIN)
   target_include_directories(lua INTERFACE ${LUA_DIR})
 
   # Sol2
-  set(SOL2_DIR vendor/sol2)
+  set(SOL2_DIR ${CMAKE_SOURCE_DIR}/vendor/sol2)
   add_library(sol2 INTERFACE)
   target_include_directories(sol2 INTERFACE ${SOL2_DIR}/include/)
+endif()
 
-  # Add the binary.
+if (BUILD_LIB)
+  add_subdirectory(lib)
+endif()
+
+if (BUILD_BIN)
   add_subdirectory(bin)
 endif()
 
