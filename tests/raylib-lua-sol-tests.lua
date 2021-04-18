@@ -27,7 +27,7 @@ end
 describe('raylib-lua-sol Tests', function (it)
   it('Functions', function()
     assert(IsWindowFullscreen() == false, 'IsWindowFullscreen() should be false')
-    assert(GetExtension('something.lua') == 'lua', 'GetExtension("something.lua") should return "lua"')
+    assert(GetFileExtension('something.lua') == '.lua', 'GetFileExtension("something.lua") should return "lua"')
   end)
 
   it('Enumerations', function ()
