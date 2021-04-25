@@ -40,6 +40,31 @@ Note that launcher can also be compiled for other platforms, just need to link w
 bin/raylib-lua-sol examples/core_basic_window.lua
 ```
 
+## Prebuild On Windows
+
+Require:
+
+- C Compiler: MinGW([Cygwin](https://cygwin.com/install.html),...) or [Visual Studio](https://visualstudio.microsoft.com/downloads/).
+- [CMake](https://cmake.org/download/).
+
+## Prebuild On GNU Linux
+
+```bash
+sudo apt install build-essential git cmake
+```
+
+### Unbuntu
+
+```bash
+sudo apt install libasound2-dev mesa-common-dev libx11-dev libxrandr-dev libxi-dev xorg-dev libgl1-mesa-dev libglu1-mesa-dev
+```
+
+### Fedora
+
+```bash
+sudo dnf install alsa-lib-devel mesa-libGL-devel libX11-devel libXrandr-devel libXi-devel libXcursor-devel libXinerama-devel
+```
+
 ## Build
 
 *raylib-lua-sol* uses cmake as a primary development target. Would appreciate adding more project templates, however.
@@ -49,7 +74,7 @@ git clone https://github.com/RobLoach/raylib-lua-sol.git
 cd raylib-lua-sol
 git submodule update --init
 cmake -B build .
-cmake --build build
+cmake --build build --config Release
 ```
 
 ## Development
