@@ -6,28 +6,51 @@ jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: recursive
-    - name: Install Dependencies
-      run: sudo apt-get install xorg-dev libglu1-mesa-dev
-    - name: Configure
-      run: cmake -B build .
-    - name: Build
-      run: cmake --build build
-    - name: Test
-      working-directory: build
-      run: ctest --output-on-failure
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Install Dependencies
+        run: sudo apt-get install libasound2-dev mesa-common-dev libx11-dev libxrandr-dev libxi-dev xorg-dev libgl1-mesa-dev libglu1-mesa-dev
+      - name: Configure
+        run: cmake -B build .
+      - name: Build
+        run: cmake --build build --config Release
+      - name: Test
+        working-directory: build
+        run: ctest --output-on-failure
 
   build-windows:
     runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        compiler: [mingw-w64,msvc16]
+        include:
+          - compiler: mingw-w64
+            PLATFORM_NAME: "MinGW Makefiles"
+          - compiler: msvc16
+            PLATFORM_NAME: "Visual Studio 16 2019"
     steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: recursive
-    - name: Configure
-      run: cmake -B build .
-    - name: Build
-      run: cmake --build build
-    - name: Test
-      run: build\bin\Debug\raylib-lua-sol.exe tests/raylib-lua-sol-tests.lua
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      # Setup Visual Studio
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.0.2
+        if: matrix.compiler == 'msvc16'
+
+      - name: Configure
+        run: cmake -G "${{ matrix.platform_name }}" -B build_${{ matrix.compiler }} .
+
+      - name: Build
+        run: cmake --build build_${{ matrix.compiler }} --config Release
+
+      - name: Test (mingw-w64)
+        run: build_${{ matrix.compiler }}\bin\raylib-lua-sol.exe tests/raylib-lua-sol-tests.lua
+        if: matrix.compiler == 'mingw-w64'
+
+      - name: Test (msvc16)
+        run: build_${{ matrix.compiler }}\bin\Release\raylib-lua-sol.exe tests/raylib-lua-sol-tests.lua
+        if: matrix.compiler == 'msvc16'
