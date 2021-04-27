@@ -5,7 +5,7 @@ project (raylib-lua-sol
   HOMEPAGE_URL "https://github.com/RobLoach/raylib-lua-sol"
   LANGUAGES C CXX)
 
-set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 configure_file(${CMAKE_SOURCE_DIR}/cmake/CTestCustom.cmake ${CMAKE_BINARY_DIR})
 
 if (MSVC)
