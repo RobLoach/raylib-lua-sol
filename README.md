@@ -4,7 +4,7 @@
 
 [Lua](http://www.lua.org/) bindings for [raylib](https://www.raylib.com/), a simple and easy-to-use library to enjoy videogames programming, with [sol](https://github.com/ThePhD/sol2) (www.raylib.com)
 
-*raylib-lua-sol* bindings are self-contained in a header-only file: [raylib-lua-sol.h](include/raylib-lua-sol.h). Just include that file
+*raylib-lua-sol* bindings are self-contained in a header-only file: [raylib-lua-sol.hpp](include/raylib-lua-sol.hpp). Just include that file
 in your project to allow loading and execution of raylib code written in Lua and Sol.
 
 *raylib-lua-sol* could be useful for prototyping, tools development, graphic applications, embedded systems and education.
