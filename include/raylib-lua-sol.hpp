@@ -4,6 +4,7 @@
 #include "raylib.h"
 #include "sol/sol.hpp"
 #include "./raylib-lua-sol-rlgl.hpp"
+#include "./raylib-lua-sol-raymath.hpp"
 
 void raylib_lua_sol_color(sol::state& lua) {
     lua["LIGHTGRAY"] = Color(LIGHTGRAY);
@@ -1196,6 +1197,7 @@ void raylib_lua_sol(sol::state& lua) {
   raylib_lua_sol_function_wrappers(lua);
   raylib_lua_sol_structs(lua);
   raylib_lua_sol_rlgl(lua);
+  raylib_lua_sol_raymath(lua);
 }
 
 #endif // RAYLIB_LUA_SOL_

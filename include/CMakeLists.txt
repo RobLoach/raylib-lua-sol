@@ -5,4 +5,5 @@ target_include_directories(raylib-lua-sol-hpp INTERFACE . )
 file(COPY
   raylib-lua-sol.hpp
   raylib-lua-sol-rlgl.hpp
+  raylib-lua-sol-raymath.hpp
   DESTINATION .)
