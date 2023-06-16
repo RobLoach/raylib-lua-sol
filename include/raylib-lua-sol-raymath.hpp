@@ -12,8 +12,8 @@ void raylib_lua_sol_raymath(sol::state& lua) {
   lua.set_function("Lerp", Lerp);
   lua.set_function("Normalize", Normalize);
   lua.set_function("Remap", Remap);
-  lua.set_function("Wrap", Wrap);
-  lua.set_function("FloatEquals", FloatEquals);
+  //lua.set_function("Wrap", Wrap);
+  //lua.set_function("FloatEquals", FloatEquals);
 
   lua.set_function("Vector2Zero", Vector2Zero);
   lua.set_function("Vector2One", Vector2One);
@@ -25,22 +25,22 @@ void raylib_lua_sol_raymath(sol::state& lua) {
   lua.set_function("Vector2LengthSqr", Vector2LengthSqr);
   lua.set_function("Vector2DotProduct", Vector2DotProduct);
   lua.set_function("Vector2Distance", Vector2Distance);
-  lua.set_function("Vector2DistanceSqr", Vector2DistanceSqr);
+  //lua.set_function("Vector2DistanceSqr", Vector2DistanceSqr);
   lua.set_function("Vector2Angle", Vector2Angle);
   lua.set_function("Vector2Scale", Vector2Scale);
   lua.set_function("Vector2Multiply", Vector2Multiply);
   lua.set_function("Vector2Negate", Vector2Negate);
   lua.set_function("Vector2Divide", Vector2Divide);
   lua.set_function("Vector2Normalize", Vector2Normalize);
-  lua.set_function("Vector2Transform", Vector2Transform);
+  //lua.set_function("Vector2Transform", Vector2Transform);
   lua.set_function("Vector2Lerp", Vector2Lerp);
   lua.set_function("Vector2Reflect", Vector2Reflect);
   lua.set_function("Vector2Rotate", Vector2Rotate);
   lua.set_function("Vector2MoveTowards", Vector2MoveTowards);
-  lua.set_function("Vector2Invert", Vector2Invert);
-  lua.set_function("Vector2Clamp", Vector2Clamp);
-  lua.set_function("Vector2ClampValue", Vector2ClampValue);
-  lua.set_function("Vector2Equals", Vector2Equals);
+  //lua.set_function("Vector2Invert", Vector2Invert);
+  //lua.set_function("Vector2Clamp", Vector2Clamp);
+  //lua.set_function("Vector2ClampValue", Vector2ClampValue);
+  //lua.set_function("Vector2Equals", Vector2Equals);
 
   lua.set_function("Vector3Zero", Vector3Zero);
   lua.set_function("Vector3One", Vector3One);
@@ -56,15 +56,15 @@ void raylib_lua_sol_raymath(sol::state& lua) {
   lua.set_function("Vector3LengthSqr", Vector3LengthSqr);
   lua.set_function("Vector3DotProduct", Vector3DotProduct);
   lua.set_function("Vector3Distance", Vector3Distance);
-  lua.set_function("Vector3DistanceSqr", Vector3DistanceSqr);
-  lua.set_function("Vector3Angle", Vector3Angle);
+  //lua.set_function("Vector3DistanceSqr", Vector3DistanceSqr);
+  //lua.set_function("Vector3Angle", Vector3Angle);
   lua.set_function("Vector3Negate", Vector3Negate);
   lua.set_function("Vector3Divide", Vector3Divide);
   lua.set_function("Vector3Normalize", Vector3Normalize);
   lua.set_function("Vector3OrthoNormalize", Vector3OrthoNormalize);
   lua.set_function("Vector3Transform", Vector3Transform);
   lua.set_function("Vector3RotateByQuaternion", Vector3RotateByQuaternion);
-  lua.set_function("Vector3RotateByAxisAngle", Vector3RotateByAxisAngle);
+  //lua.set_function("Vector3RotateByAxisAngle", Vector3RotateByAxisAngle);
   lua.set_function("Vector3Lerp", Vector3Lerp);
   lua.set_function("Vector3Reflect", Vector3Reflect);
   lua.set_function("Vector3Min", Vector3Min);
@@ -72,11 +72,11 @@ void raylib_lua_sol_raymath(sol::state& lua) {
   lua.set_function("Vector3Barycenter", Vector3Barycenter);
   lua.set_function("Vector3Unproject", Vector3Unproject);
   lua.set_function("Vector3ToFloatV", Vector3ToFloatV);
-  lua.set_function("Vector3Invert", Vector3Invert);
-  lua.set_function("Vector3Clamp", Vector3Clamp);
-  lua.set_function("Vector3ClampValue", Vector3ClampValue);
-  lua.set_function("Vector3Equals", Vector3Equals);
-  lua.set_function("Vector3Refract", Vector3Refract);
+  //lua.set_function("Vector3Invert", Vector3Invert);
+  //lua.set_function("Vector3Clamp", Vector3Clamp);
+  //lua.set_function("Vector3ClampValue", Vector3ClampValue);
+  //lua.set_function("Vector3Equals", Vector3Equals);
+  //lua.set_function("Vector3Refract", Vector3Refract);
 
   lua.set_function("MatrixDeterminant", MatrixDeterminant);
   lua.set_function("MatrixTrace", MatrixTrace);
@@ -122,7 +122,7 @@ void raylib_lua_sol_raymath(sol::state& lua) {
   lua.set_function("QuaternionFromEuler", QuaternionFromEuler);
   lua.set_function("QuaternionToEuler", QuaternionToEuler);
   lua.set_function("QuaternionTransform", QuaternionTransform);
-  lua.set_function("QuaternionEquals", QuaternionEquals);
+  //lua.set_function("QuaternionEquals", QuaternionEquals);
 }
 
 #endif
