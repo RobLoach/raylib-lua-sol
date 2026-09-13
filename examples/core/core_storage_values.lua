@@ -9,9 +9,7 @@
 --
 -------------------------------------------------------------------------------------------
 
--- NOTE: Storage positions must start with 0, directly related to file memory layout
-STORAGE_SCORE = 0
-STORAGE_HISCORE = 1
+local STORAGE_FILE = "storage.data"
 
 -- Initialization
 -------------------------------------------------------------------------------------------
@@ -38,12 +36,14 @@ while not WindowShouldClose() do    -- Detect window close button or ESC key
     end
 
     if (IsKeyPressed(KEY_ENTER)) then
-        StorageSaveValue(STORAGE_SCORE, score)
-        StorageSaveValue(STORAGE_HISCORE, hiscore)
+        SaveFileText(STORAGE_FILE, string.format("%d\n%d", score, hiscore))
     elseif (IsKeyPressed(KEY_SPACE)) then
-        -- NOTE: If requested position could not be found, value 0 is returned
-        score = StorageLoadValue(STORAGE_SCORE)
-        hiscore = StorageLoadValue(STORAGE_HISCORE)
+        if FileExists(STORAGE_FILE) then
+            local text = LoadFileText(STORAGE_FILE)
+            local loadedScore, loadedHiscore = string.match(text, "(%-?%d+)\n(%-?%d+)")
+            score = tonumber(loadedScore) or 0
+            hiscore = tonumber(loadedHiscore) or 0
+        end
     end
 
     framesCounter = framesCounter + 1

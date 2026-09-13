@@ -34,7 +34,6 @@ end
 
 local playerPosition = Vector3(4.0, 2.0, 4.0)       -- Define player position
 
-SetCameraMode(camera, CAMERA_FIRST_PERSON)      -- Set a first person camera mode
 
 SetTargetFPS(60)                                    -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -43,7 +42,7 @@ SetTargetFPS(60)                                    -- Set our game to run at 60
 while not WindowShouldClose() do                    -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    UpdateCamera(camera)                   -- Update camera
+    UpdateCamera(camera, CAMERA_FIRST_PERSON)                   -- Update camera
     ---------------------------------------------------------------------------------------
 
     -- Draw

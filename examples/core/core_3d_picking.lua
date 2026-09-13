@@ -30,7 +30,6 @@ local ray = Ray() -- Picking line ray
 
 local collision = false
 
-SetCameraMode(camera, CAMERA_FREE)      -- Set a free camera mode
 
 SetTargetFPS(60)                            -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -39,16 +38,16 @@ SetTargetFPS(60)                            -- Set our game to run at 60 frames-
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera, CAMERA_FREE)           -- Update camera
 
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) then
         -- NOTE: This function is NOT WORKING properly!
-        ray = GetMouseRay(GetMousePosition(), camera)
+        ray = GetScreenToWorldRay(GetMousePosition(), camera)
 
         -- Check collision between ray and box
-        collision = CheckCollisionRayBox(ray,
+        collision = GetRayCollisionBox(ray,
                         BoundingBox(Vector3(cubePosition.x - cubeSize.x/2, cubePosition.y - cubeSize.y/2, cubePosition.z - cubeSize.z/2),
-                                    Vector3(cubePosition.x + cubeSize.x/2, cubePosition.y + cubeSize.y/2, cubePosition.z + cubeSize.z/2)))
+                                    Vector3(cubePosition.x + cubeSize.x/2, cubePosition.y + cubeSize.y/2, cubePosition.z + cubeSize.z/2))).hit
 
         --print("collision check:", collision)
     end

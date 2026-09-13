@@ -31,8 +31,8 @@ local fontSize = font.baseSize
 local fontPosition = Vector2(40, screenHeight/2 + 50)
 local textSize
 
-SetTextureFilter(font.texture, FILTER_POINT)
-local currentFontFilter = 0      -- Default: FILTER_POINT
+SetTextureFilter(font.texture, TEXTURE_FILTER_POINT)
+local currentFontFilter = 0      -- Default: TEXTURE_FILTER_POINT
 
 local count = 0
 local droppedFiles
@@ -48,14 +48,14 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
     -- Choose font texture filter method
     if (IsKeyPressed(KEY_ONE)) then
-        SetTextureFilter(font.texture, FILTER_POINT)
+        SetTextureFilter(font.texture, TEXTURE_FILTER_POINT)
         currentFontFilter = 0
     elseif (IsKeyPressed(KEY_TWO)) then
-        SetTextureFilter(font.texture, FILTER_BILINEAR)
+        SetTextureFilter(font.texture, TEXTURE_FILTER_BILINEAR)
         currentFontFilter = 1
     elseif (IsKeyPressed(KEY_THREE)) then
         -- NOTE: Trilinear filter won't be noticed on 2D drawing
-        SetTextureFilter(font.texture, FILTER_TRILINEAR)
+        SetTextureFilter(font.texture, TEXTURE_FILTER_TRILINEAR)
         currentFontFilter = 2
     end
 
@@ -67,13 +67,12 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
     -- Load a dropped TTF file dynamically (at current fontSize)
     if (IsFileDropped()) then
-        droppedFiles = GetDroppedFiles()
+        droppedFiles = LoadDroppedFiles()
         count = #droppedFiles
 
         if (count == 1) then -- Only support one ttf file dropped
-            UnloadSpriteFont(font)
-            font = LoadFontTTF(droppedFiles[1], fontSize, 0, 0)
-            ClearDroppedFiles()
+            UnloadFont(font)
+            font = LoadFontEx(droppedFiles[1], fontSize)
         end
     end
     ---------------------------------------------------------------------------------------
@@ -110,9 +109,7 @@ end
 
 -- De-Initialization
 -------------------------------------------------------------------------------------------
-UnloadSpriteFont(font)     -- SpriteFont unloading
-
-ClearDroppedFiles()        -- Clear internal buffers
+UnloadFont(font)     -- Font unloading
 
 CloseWindow()               -- Close window and OpenGL context
 -------------------------------------------------------------------------------------------

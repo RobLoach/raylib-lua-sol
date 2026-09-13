@@ -46,7 +46,7 @@ InitWindow(screenWidth, screenHeight, "raylib [textures] example - image process
 -- NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
 
 local image = LoadImage("resources/parrots.png")   -- Loaded in CPU memory (RAM)
-image = ImageFormat(image, UNCOMPRESSED_R8G8B8A8)         -- Format image to RGBA 32bit (required for texture update)
+ImageFormat(image, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8)     -- Format image to RGBA 32bit (required for texture update)
 local texture = LoadTextureFromImage(image)        -- Image converted to texture, GPU memory (VRAM)
 
 local currentProcess = COLOR_NONE

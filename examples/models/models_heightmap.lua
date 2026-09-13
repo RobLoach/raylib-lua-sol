@@ -27,7 +27,6 @@ local mapPosition = Vector3(-8.0, 0.0, -8.0)            -- Set model position (d
 
 UnloadImage(image)                 -- Unload heightmap image from RAM, already uploaded to VRAM
 
-SetCameraMode(camera, CAMERA_ORBITAL)   -- Set an orbital camera mode
 
 SetTargetFPS(60)                            -- Set our game to run at 60 frames-per-second
 ----------------------------------------------------------------------------------------
@@ -36,7 +35,7 @@ SetTargetFPS(60)                            -- Set our game to run at 60 frames-
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera, CAMERA_ORBITAL)           -- Update camera
     ---------------------------------------------------------------------------------------
 
     -- Draw

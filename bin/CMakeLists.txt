@@ -1,11 +1,18 @@
 add_executable(raylib-lua-sol raylib-lua-sol.cpp)
 
-target_compile_definitions(raylib-lua-sol PUBLIC -DLUA -DPHYSAC_NO_THREADS)
+target_compile_definitions(raylib-lua-sol PUBLIC -DLUA)
 
 set_target_properties(raylib-lua-sol PROPERTIES
   CXX_STANDARD 17
   CXX_EXTENSIONS OFF
 )
+
+# GCC 15+ diagnoses uninstantiated sol2 templates as errors (-Wtemplate-body).
+include(CheckCXXCompilerFlag)
+check_cxx_compiler_flag(-Wno-template-body HAVE_WNO_TEMPLATE_BODY)
+if (HAVE_WNO_TEMPLATE_BODY)
+  target_compile_options(raylib-lua-sol PRIVATE -Wno-template-body)
+endif()
 
 target_link_libraries(raylib-lua-sol
   raylib-lua-sol-hpp

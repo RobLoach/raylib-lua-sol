@@ -41,7 +41,7 @@ while not WindowShouldClose() do    -- Detect window close button or ESC key
         if (IsGamepadAvailable(GAMEPAD.PLAYER1)) then
             DrawText(string.format("GP1: %s", GetGamepadName(GAMEPAD.PLAYER1)), 10, 10, 10, BLACK)
 
-            if (IsGamepadName(GAMEPAD.PLAYER1, "Xbox 360 Controller")) then
+            if (GetGamepadName(GAMEPAD.PLAYER1) == "Xbox 360 Controller") then
                 DrawTexture(texXboxPad, 0, 0, DARKGRAY)
                 
                 -- Draw buttons: xbox home
@@ -87,7 +87,7 @@ while not WindowShouldClose() do    -- Detect window close button or ESC key
                 
                 --DrawText(FormatText("Xbox axis LT: %02.02f", GetGamepadAxisMovement(GAMEPAD.PLAYER1, GAMEPAD.XBOX_AXIS_LT)), 10, 40, 10, BLACK)
                 --DrawText(FormatText("Xbox axis RT: %02.02f", GetGamepadAxisMovement(GAMEPAD.PLAYER1, GAMEPAD.XBOX_AXIS_RT)), 10, 60, 10, BLACK)
-            elseif (IsGamepadName(GAMEPAD.PLAYER1, "PLAYSTATION(R)3 Controller")) then
+            elseif (GetGamepadName(GAMEPAD.PLAYER1) == "PLAYSTATION(R)3 Controller") then
                 DrawTexture(texPs3Pad, 0, 0, DARKGRAY)
 
                 -- Draw buttons: ps

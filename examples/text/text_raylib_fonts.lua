@@ -86,7 +86,7 @@ end
 
 -- De-Initialization
 -------------------------------------------------------------------------------------------
-for i = 1, 8 do UnloadSpriteFont(fonts[i]) end       -- SpriteFont unloading
+for i = 1, 8 do UnloadFont(fonts[i]) end       -- Font unloading
 
 CloseWindow()                 -- Close window and OpenGL context
 -------------------------------------------------------------------------------------------

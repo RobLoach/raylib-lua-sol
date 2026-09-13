@@ -32,7 +32,6 @@ camera.fovy = 60.0                          -- Camera field-of-view Y
 
 local cubePosition = Vector3(0.0, 0.0, 0.0)
 
-SetCameraMode(CAMERA_FIRST_PERSON); -- Set first person camera mode
 
 SetTargetFPS(90)                    -- Set our game to run at 90 frames-per-second
 ----------------------------------------------------------------------------------------
@@ -41,7 +40,7 @@ SetTargetFPS(90)                    -- Set our game to run at 90 frames-per-seco
 while not WindowShouldClose() do    -- Detect window close button or ESC key
     -- Update
     ------------------------------------------------------------------------------------
-    UpdateCamera(camera);          -- Update camera (simulator mode)
+    UpdateCamera(camera, CAMERA_FIRST_PERSON);          -- Update camera (simulator mode)
 
     if (IsKeyPressed(KEY_SPACE)) then ToggleVrMode() end   -- Toggle VR mode
     ------------------------------------------------------------------------------------

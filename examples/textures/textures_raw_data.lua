@@ -23,7 +23,7 @@ InitWindow(screenWidth, screenHeight, "raylib [textures] example - texture from 
 -- NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
 
 -- Load RAW image data (512x512, 32bit RGBA, no file header)
-local fudesumiRaw = LoadImageRaw("resources/fudesumi.raw", 384, 512, TextureFormat.UNCOMPRESSED_R8G8B8A8, 0)
+local fudesumiRaw = LoadImageRaw("resources/fudesumi.raw", 384, 512, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8, 0)
 local fudesumi = LoadTextureFromImage(fudesumiRaw)    -- Upload CPU (RAM) image to GPU (VRAM)
 UnloadImage(fudesumiRaw)                              -- Unload CPU (RAM) image data
 

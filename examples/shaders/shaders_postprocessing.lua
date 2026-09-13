@@ -91,7 +91,6 @@ local currentShader = FX_GRAYSCALE;
 local target = LoadRenderTexture(screenWidth, screenHeight)
 
 -- Setup orbital camera
-SetCameraMode(camera, CAMERA_ORBITAL)   -- Set an orbital camera mode
 
 SetTargetFPS(60)                            -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -100,7 +99,7 @@ SetTargetFPS(60)                            -- Set our game to run at 60 frames-
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera, CAMERA_ORBITAL)           -- Update camera
 
     if (IsKeyPressed(KEY_RIGHT)) then currentShader = currentShader + 1
     elseif (IsKeyPressed(KEY_LEFT)) then currentShader = currentShader - 1 end

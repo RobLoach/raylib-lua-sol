@@ -43,7 +43,7 @@
 *     3. This notice may not be removed or altered from any source distribution.
 *
 ********************************************************************************************/
-#inclde  <limits>
+#include <limits>
 #include <iostream>
 #include <string>
 

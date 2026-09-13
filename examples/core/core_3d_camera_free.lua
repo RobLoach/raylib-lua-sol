@@ -25,7 +25,6 @@ camera.fovy = 45.0                          -- Camera field-of-view Y
 
 local cubePosition = Vector3(0.0, 0.0, 0.0)
 
-SetCameraMode(camera, CAMERA_FREE)      -- Set a free camera mode
 
 SetTargetFPS(60)                            -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -34,7 +33,7 @@ SetTargetFPS(60)                            -- Set our game to run at 60 frames-
 while not WindowShouldClose() do            -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
-    UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera, CAMERA_FREE)           -- Update camera
     ---------------------------------------------------------------------------------------
 
     -- Draw

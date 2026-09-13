@@ -1,1 +1,15 @@
+# CMake / compiler output
 build
+/build-*/
+/build_*/
+out/
+cmake-build-*/
+.vs/
+
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+compile_commands.json
+CMakeUserPresets.json

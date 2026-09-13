@@ -52,6 +52,6 @@ describe('raylib-lua-sol Tests', function (it)
   end)
 
   it('rlgl', function ()
-    assert(MAX_MATERIAL_MAPS == 12, "MAX_MATERIAL_MAPS should be 12")
+    assert(RL_MAX_SHADER_LOCATIONS == 32, "RL_MAX_SHADER_LOCATIONS should be 32")
   end)
 end)

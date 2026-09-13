@@ -47,7 +47,6 @@ local swirlCenter = { screenWidth/2, screenHeight/2 }
 local target = LoadRenderTexture(screenWidth, screenHeight)
 
 -- Setup orbital camera
-SetCameraMode(camera, CAMERA_ORBITAL)   -- Set an orbital camera mode
 
 SetTargetFPS(60)                            -- Set our game to run at 60 frames-per-second
 -------------------------------------------------------------------------------------------
@@ -64,7 +63,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
     -- Send new value to the shader to be used on drawing
     SetShaderValue(shader, swirlCenterLoc, swirlCenter)
 
-    UpdateCamera(camera)           -- Update camera
+    UpdateCamera(camera, CAMERA_ORBITAL)           -- Update camera
     ---------------------------------------------------------------------------------------
 
     -- Draw

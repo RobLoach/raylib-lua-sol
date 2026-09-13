@@ -24,7 +24,7 @@ InitWindow(screenWidth, screenHeight, "raylib [audio] example - raw audio stream
 InitAudioDevice()              -- Initialize audio device
 
 -- Init raw audio stream (sample rate: 22050, sample size: 32bit-float, channels: 1-mono)
-local stream = InitAudioStream(22050, 32, 1)
+local stream = LoadAudioStream(22050, 32, 1)
 
 -- Fill audio stream with some samples (sine wave)
 local data = {}
@@ -89,7 +89,7 @@ end
 
 -- De-Initialization
 -------------------------------------------------------------------------------------------
-CloseAudioStream(stream)   -- Close raw audio stream and delete buffers from RAM
+UnloadAudioStream(stream)  -- Close raw audio stream and delete buffers from RAM
 
 CloseAudioDevice()         -- Close audio device (music streaming is automatically stopped)
 

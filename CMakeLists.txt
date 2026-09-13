@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.25)
 project (raylib-lua-sol
-  VERSION 0.2.2
+  VERSION 0.3.0
   DESCRIPTION "Lua bindings for raylib"
   HOMEPAGE_URL "https://github.com/RobLoach/raylib-lua-sol"
   LANGUAGES C CXX)
@@ -34,11 +34,14 @@ add_subdirectory(include)
 
 if (BUILD_BIN)
   # raylib
-  find_package(raylib 3.0.0)
+  find_package(raylib 6.0 QUIET)
   if (NOT raylib_FOUND)
-    set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE) # don't build the supplied examples
-    set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
+    # raylib uses the same BUILD_EXAMPLES cache option; keep this project's value.
+    set(_RAYLIB_LUA_SOL_BUILD_EXAMPLES "${BUILD_EXAMPLES}")
+    set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
     add_subdirectory(vendor/raylib)
+    set(BUILD_EXAMPLES "${_RAYLIB_LUA_SOL_BUILD_EXAMPLES}" CACHE BOOL "" FORCE)
+    unset(_RAYLIB_LUA_SOL_BUILD_EXAMPLES)
   endif()
 
   # Lua

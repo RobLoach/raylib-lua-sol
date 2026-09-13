@@ -52,8 +52,8 @@ end
 
 -- De-Initialization
 -------------------------------------------------------------------------------------------
-UnloadSpriteFont(fontBm)     -- AngelCode SpriteFont unloading
-UnloadSpriteFont(fontTtf)    -- TTF SpriteFont unloading
+UnloadFont(fontBm)     -- AngelCode Font unloading
+UnloadFont(fontTtf)    -- TTF Font unloading
 
 CloseWindow()                -- Close window and OpenGL context
 -------------------------------------------------------------------------------------------

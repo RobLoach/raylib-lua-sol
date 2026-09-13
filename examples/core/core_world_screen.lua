@@ -21,7 +21,6 @@ local camera = Camera(Vector3(10.0, 10.0, 10.0), Vector3(), Vector3(0.0, 1.0, 0.
 
 local cubePosition = Vector3()
 
-SetCameraMode(camera, CAMERA_FREE)  -- Set a free camera mode
 
 SetTargetFPS(60)                        -- Set our game to run at 60 frames-per-second
 ----------------------------------------------------------------------------------------
@@ -30,7 +29,7 @@ SetTargetFPS(60)                        -- Set our game to run at 60 frames-per-
 while not WindowShouldClose() do        -- Detect window close button or ESC key
     -- Update
     ------------------------------------------------------------------------------------
-    UpdateCamera(camera)       -- Update camera
+    UpdateCamera(camera, CAMERA_FREE)       -- Update camera
 
     -- Calculate cube screen space position (with a little offset to be in top)
     local cubeScreenPosition = GetWorldToScreen(Vector3(cubePosition.x, cubePosition.y + 2.5, cubePosition.z), camera)

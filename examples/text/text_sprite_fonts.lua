@@ -64,9 +64,9 @@ end
 
 -- De-Initialization
 -------------------------------------------------------------------------------------------
-UnloadSpriteFont(font1)      -- SpriteFont unloading
-UnloadSpriteFont(font2)      -- SpriteFont unloading
-UnloadSpriteFont(font3)      -- SpriteFont unloading
+UnloadFont(font1)      -- Font unloading
+UnloadFont(font2)      -- Font unloading
+UnloadFont(font3)      -- Font unloading
 
 CloseWindow()                -- Close window and OpenGL context
 -------------------------------------------------------------------------------------------

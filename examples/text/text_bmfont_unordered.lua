@@ -41,7 +41,7 @@ while not WindowShouldClose() do            -- Detect window close button or ESC
 
         DrawText("Font name:       PixAntiqua", 40, 50, 20, GRAY)
         DrawText(string.format("Font base size:           %i", font.baseSize), 40, 80, 20, GRAY)
-        DrawText(string.format("Font chars number:     %i", font.charsCount), 40, 110, 20, GRAY)
+        DrawText(string.format("Font chars number:     %i", font.glyphCount), 40, 110, 20, GRAY)
 
         DrawTextEx(font, msg, Vector2(40, 180), font.baseSize, 0, MAROON)
 
@@ -51,7 +51,7 @@ end
 
 -- De-Initialization
 -------------------------------------------------------------------------------------------
-UnloadSpriteFont(font)      -- AngelCode SpriteFont unloading
+UnloadFont(font)      -- AngelCode Font unloading
 
 CloseWindow()                -- Close window and OpenGL context
 -------------------------------------------------------------------------------------------

@@ -29,7 +29,7 @@ while not WindowShouldClose() do    -- Detect window close button or ESC key
     -- Update
     ---------------------------------------------------------------------------------------
     if (IsFileDropped()) then 
-        droppedFiles = GetDroppedFiles() 
+        droppedFiles = LoadDroppedFiles() 
         count = #droppedFiles
     end
     ---------------------------------------------------------------------------------------
@@ -60,7 +60,5 @@ end
 
 -- De-Initialization
 -------------------------------------------------------------------------------------------
-ClearDroppedFiles()    -- Clear internal buffers
-
 CloseWindow()          -- Close window and OpenGL context
 -------------------------------------------------------------------------------------------
